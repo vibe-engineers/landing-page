@@ -48,13 +48,13 @@ export const tools = [
     learnMoreHref: '#examples',
   },
   {
-    name: 'viberetry',
-    icon: RefreshCw,
-    learnMoreHref: '#examples',
-  },
-  {
     name: 'vibegen',
     icon: Sparkles,
+    learnMoreHref: '#examples',
+  },
+    {
+    name: 'viberetry',
+    icon: RefreshCw,
     learnMoreHref: '#examples',
   },
 ]
@@ -99,16 +99,6 @@ if vc(f"{user_input} is a valid dog breed"):
 else:
     print(f"{user_input} is not a valid dog breed!")`,
   },
-  viberetry: {
-    label: 'viberetry',
-    code: `// AI-influenced jitter/backoff can vary.
-await viberetry.call(fetchWithBackoff, {
-  maxAttempts: 5,
-  strategy: "adaptive",
-  // highlight-next-line
-  guardrail: { timeoutMs: 8000 },
-});`,
-  },
   vibegen: {
     label: 'vibegen',
     code: `from google import genai
@@ -132,6 +122,16 @@ def get_antonym(word: str) -> str:
 user_input = input("Enter a word:")
 antonym = get_antonym(user_input)
 print(f"The antonym of {user_input} is {antonym}")`,
+  },
+  viberetry: {
+    label: 'viberetry',
+    code: `// AI-influenced jitter/backoff can vary.
+await viberetry.call(fetchWithBackoff, {
+  maxAttempts: 5,
+  strategy: "adaptive",
+  // highlight-next-line
+  guardrail: { timeoutMs: 8000 },
+});`,
   },
 }
 

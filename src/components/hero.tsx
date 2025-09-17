@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex h-[calc(100vh-56px)] flex-col items-center justify-center pt-4 pb-20 md:pt-10 md:pb-32"
+      className="relative flex min-h-[calc(100vh-56px)] flex-col items-center justify-center"
     >
       <div
         aria-hidden="true"
@@ -32,10 +32,10 @@ export default function Hero() {
             <Zap className="mr-2 h-4 w-4" />
             {t('announcement')}
           </div>
-          <h1 className="font-headline text-5xl font-black tracking-tighter sm:text-7xl md:text-8xl">
+          <h1 className="font-headline text-4xl font-black tracking-tighter sm:text-6xl md:text-8xl">
             {tSite('name')}
           </h1>
-          <p className="mt-4 font-headline text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
+          <p className="mt-4 font-headline text-xl font-bold tracking-tight sm:text-2xl md:text-4xl">
             {t('tagline')}
           </p>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground/80 md:text-xl">
@@ -65,18 +65,18 @@ export default function Hero() {
               </Link>
             </Button>
           </div>
+          <Link
+            href={heroContent.primaryCta.href}
+            onClick={scrollToSection}
+            className="group mt-10 hidden h-10 w-6 items-start justify-center rounded-full border-2 border-foreground/50 transition-colors hover:border-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:flex"
+          >
+            <span
+              aria-hidden="true"
+              className="mt-2 h-2 w-1 rounded-full bg-foreground/50 animate-scroll-down transition-colors group-hover:bg-foreground"
+            />
+          </Link>
         </div>
       </div>
-      <Link
-        href={heroContent.primaryCta.href}
-        onClick={scrollToSection}
-        className="group absolute bottom-10 flex h-10 w-6 items-start justify-center rounded-full border-2 border-foreground/50 transition-colors hover:border-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        <span
-          aria-hidden="true"
-          className="mt-2 h-2 w-1 rounded-full bg-foreground/50 animate-scroll-down transition-colors group-hover:bg-foreground"
-        />
-      </Link>
     </section>
   )
 }

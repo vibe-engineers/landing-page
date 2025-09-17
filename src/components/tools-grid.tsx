@@ -16,7 +16,7 @@ import { useTranslations } from 'next-intl'
 export default function ToolsGrid() {
   const t = useTranslations('tools')
   const displayedTools = tools.filter((tool) =>
-    ['vibechecks', 'viberetry', 'vibegen'].includes(tool.name)
+    ['vibechecks', 'vibegen', 'viberetry'].includes(tool.name)
   )
 
   return (
