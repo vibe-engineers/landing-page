@@ -6,20 +6,29 @@ import { teamMembers } from '@/lib/team'
 
 interface TeamPageProps {
   title: string
+  subtitle: string
 }
 
-const TeamPage: FC<TeamPageProps> = ({ title }) => {
+const TeamPage: FC<TeamPageProps> = ({ title, subtitle }) => {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-24">
       <motion.h1
-        className="text-4xl font-bold text-center mb-12"
+        className="text-4xl font-bold text-center mb-4"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         {title}
       </motion.h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <motion.p
+        className="text-xl text-foreground/80 text-center mb-12"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        {subtitle}
+      </motion.p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
         {teamMembers.map((member, index) => (
           <motion.div
             key={index}

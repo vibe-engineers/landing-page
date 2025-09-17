@@ -10,7 +10,7 @@ export default async function Team() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <TeamPage title={t('title')} />
+        <TeamPage title={t('title')} subtitle={t('subtitle')} />
       </main>
       <Footer />
     </div>
