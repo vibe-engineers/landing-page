@@ -44,7 +44,8 @@ export function scrollToSection(event: ReactMouseEvent<HTMLAnchorElement>) {
       if (target) {
         target.scrollIntoView({
           behavior: 'smooth',
-          block: 'center',
+          block: 'start',
+          inline: 'nearest',
         })
       } else {
         const localeMatch = window.location.pathname.match(/^\/(en|zh)(?=\/|$)/)
