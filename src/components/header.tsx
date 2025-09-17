@@ -2,7 +2,7 @@
 
 import { Link, usePathname } from '@/navigation'
 import { useLocale, useTranslations } from 'next-intl'
-import { Menu, Github, Languages, FileText, Shield } from 'lucide-react'
+import { Menu, Github, Languages, FileText, Shield, Users } from 'lucide-react'
 import { FaDiscord } from 'react-icons/fa6'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { Button } from '@/components/ui/button'
@@ -25,6 +25,7 @@ export default function Header() {
   const { toast } = useToast()
 
   const legalLinks = [
+    { href: '/team', label: t('legal.team'), icon: Users },
     { href: '/terms-of-service', label: t('legal.terms'), icon: FileText },
     { href: '/privacy-policy', label: t('legal.privacy'), icon: Shield },
   ]
@@ -165,6 +166,9 @@ export default function Header() {
                 ))}
                 <div className="mt-4 border-t pt-4 flex flex-col space-y-4">
                   <span className="text-foreground/60">{t('legal.title')}</span>
+                  <Link href="/team" className="text-foreground/80">
+                    {t('legal.team')}
+                  </Link>
                   <Link href="/terms-of-service" className="text-foreground/80">
                     {t('legal.terms')}
                   </Link>
