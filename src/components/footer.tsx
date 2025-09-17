@@ -14,7 +14,7 @@ const currentYear = new Date().getFullYear()
 const footerNav = {
   about: {
     links: [
-      { key: 'team', href: '#' },
+      { key: 'team', href: '/team' },
       { key: 'sponsors', href: '#' },
     ],
   },

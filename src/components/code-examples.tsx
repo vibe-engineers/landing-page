@@ -41,7 +41,7 @@ export default function CodeExamples() {
             ))}
           </TabsList>
           {Object.entries(codeExamples).map(([key, example]) => (
-            <TabsContent key={key} value={key} forceMount>
+            <TabsContent key={key} value={key}>
               <div className="mt-4 w-full rounded-lg bg-gray-900 text-sm font-code dark:bg-black">
                 <div className="px-4 py-2 text-gray-400 text-xs">
                   {t(`${key}.description`)}

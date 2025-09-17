@@ -270,5 +270,8 @@
         "content": "如果您对本条款有任何疑问，请通过 <emailLink>hello@vibe-engineers.com</emailLink> 与我们联系。"
       }
     ]
+  },
+  "teamPage": {
+    "title": "认识我们的团队"
   }
 }

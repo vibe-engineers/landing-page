@@ -270,5 +270,8 @@
         "content": "If you have any questions about these Terms, please contact us at <emailLink>hello@vibe-engineers.com</emailLink>."
       }
     ]
+  },
+  "teamPage": {
+    "title": "Meet the Team"
   }
 }
