@@ -1,0 +1,274 @@
+{
+  "siteConfig": {
+    "name": "Vibe Engineers",
+    "description": "Vibe Engineers builds playful, boundary-pushing tools that let AI influence runtime control flow."
+  },
+  "navLinks": {
+    "tools": "Tools",
+    "philosophy": "Philosophy",
+    "examples": "Examples",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "announcement": "Pushing the boundaries of runtime logic",
+    "tagline": "Bring vibes into your code.",
+    "subcopy": "We're building the next generation of developer tools that inject AI into runtime logic. Our vibe tools are playful, non-deterministic, and designed to push the boundaries of what's possible.",
+    "primaryCta": "Explore Our Tools",
+    "secondaryCta": "Join the Community"
+  },
+  "tools": {
+    "title": "Toolkit for a New Engineering Paradigm",
+    "subtitle": "Injecting AI into runtime logic to build adaptive, effortless, and creative applications.",
+    "more": "And more in the works...",
+    "vibetools": {
+      "name": "vibetools",
+      "valueProp": "Utility layer to wire AI decisions into control flow.",
+      "bullets": [
+        "Core functions for vibe-driven development",
+        "Seamless integration with existing logic",
+        "Foundation for all other vibe tools"
+      ],
+      "learnMore": "Learn More"
+    },
+    "vibechecks": {
+      "name": "vibechecks",
+      "valueProp": "Fuzzy gates that nudge execution paths.",
+      "bullets": [
+        "Probabilistic branching and feature flagging",
+        "Adapt to changing conditions in real-time",
+        "Move beyond rigid if/else statements"
+      ],
+      "learnMore": "Learn More"
+    },
+    "viberetry": {
+      "name": "viberetry",
+      "valueProp": "Adaptive, AI-guided retry strategies.",
+      "bullets": [
+        "Intelligent backoff and jitter policies",
+        "Learn from failure patterns to improve reliability",
+        "Make your services more resilient"
+      ],
+      "learnMore": "Learn More"
+    },
+    "vibegen": {
+      "name": "vibegen",
+      "valueProp": "Generative helpers for scaffolding variants.",
+      "bullets": [
+        "Explore alternative implementations",
+        "A/B test different logic paths",
+        "Accelerate prototyping and development"
+      ],
+      "learnMore": "Learn More"
+    }
+  },
+  "philosophy": {
+    "title": "Our Philosophy",
+    "subtitle": "We're not just building tools—we're reimagining how developers interact with logic, conditions, and control flow in the age of AI.",
+    "principles": {
+      "playful": {
+        "title": "Playful by Design",
+        "description": "We believe code should be fun. Our tools inject personality and creativity into technical processes."
+      },
+      "nonDeterminism": {
+        "title": "Embracing Non-Determinism",
+        "description": "Not all logic needs to be predictable. Sometimes the best solutions emerge from controlled randomness."
+      },
+      "boundaryPushing": {
+        "title": "Boundary Pushing",
+        "description": "We challenge conventional programming paradigms and explore what's possible at the intersection of AI and code."
+      },
+      "contextAwareness": {
+        "title": "Context Awareness",
+        "description": "Our tools understand not just what you're doing, but the vibe and context around it."
+      }
+    },
+    "quote": "Why settle for boring, predictable code when you can have code with personality, context, and a little bit of magic?",
+    "quoteAuthor": "The Vibe Engineers Team"
+  },
+  "codeExamples": {
+    "title": "See the Vibes in Action",
+    "subtitle": "Explore how to use our tools with some of these simple, vibey examples.",
+    "copy": "Copy code",
+    "copied": {
+      "title": "Copied to clipboard!",
+      "description": "Example for {key} is ready to paste."
+    },
+    "vibechecks": {
+      "label": "vibechecks",
+      "description": "A conditional check to determine code path based on an AI-influenced boolean."
+    },
+    "viberetry": {
+      "label": "viberetry",
+      "description": "An AI-powered retry mechanism that adapts its strategy based on previous attempts, with a safety timeout."
+    },
+    "vibegen": {
+      "label": "vibegen",
+      "description": "Generate and test multiple variants of a function to find the most optimal implementation."
+    }
+  },
+  "notice": {
+    "title": "A Playful Notice on Non-Determinism",
+    "description": "Our tools are non-deterministic by design. They embrace randomness and AI-driven variability to explore novel solutions. We strongly recommend implementing robust guardrails, monitoring, and observability to ensure your applications remain safe and predictable where it counts."
+  },
+  "callToAction": {
+    "title": "Unlock New Possibilities",
+    "subcopy": "From more robust systems to dynamic user experiences, vibe engineering opens up a new frontier. Ready to start building?",
+    "primaryCta": "Explore Our Tools",
+    "secondaryCta": "Join the Community"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to common questions about the Vibe Engineers toolkit.",
+    "q1": {
+      "question": "What's the difference between determinism and 'vibes'?",
+      "answer": "Deterministic code produces the same output for a given input every time. Code with 'vibes' introduces non-determinism, allowing AI to explore different behaviors and outcomes, which can lead to more creative and resilient solutions. It's about trading strict predictability for adaptive potential."
+    },
+    "q2": {
+      "question": "How can I manage my API costs and limits?",
+      "answer": "Vibe Engineers tools come with configurable modes (e.g. 'LAX', 'AGGRESSIVE') to help manage API usage. If you are concerned about costs, consider using Google Gemini API which provides a free tier for experimentation."
+    },
+    "q3": {
+      "question": "Can I use vibe tools in production?",
+      "answer": "Yes, but start small, monitor closely and evaluate your use cases. The tools are built for experimentation and can power production systems once you layer in guardrails, fallbacks, and incremental rollouts to control risk."
+    },
+    "q4": {
+      "question": "Do the tools require a specific language or framework?",
+      "answer": "Our tools are currently written and published as Python libraries. We are exploring support for other languages such as TypeScript/Javascript based on community interest."
+    },
+    "q5": {
+      "question": "How do I start experimenting with vibe-driven code?",
+      "answer": "Check out the code examples on this page, explore the GitHub repositories, and try the tools in a sandboxed environment. Start with small features and progressively add more 'vibe' as you gain confidence."
+    },
+    "q6": {
+      "question": "Are the tools open source?",
+      "answer": "Yes, all Vibe Engineers tools are open source and available on GitHub. We believe in the power of community collaboration to push the boundaries of software engineering. We welcome contributions, feedback, and new ideas."
+    }
+  },
+  "footer": {
+    "love": "with love from the",
+    "team": "Vibe Engineers team",
+    "rights": "All rights reserved.",
+    "nav": {
+      "about": {
+        "title": "About us",
+        "links": {
+          "team": "Our Team",
+          "sponsors": "Sponsors"
+        }
+      },
+      "contribute": {
+        "title": "How to contribute",
+        "links": {
+          "sponsor": "Become a Sponsor",
+          "contributions": "Code Contributions"
+        }
+      },
+      "legal": {
+        "title": "Legal",
+        "links": {
+          "terms": "Terms of Service",
+          "privacy": "Privacy Policy"
+        }
+      }
+    }
+  },
+  "legal": {
+    "title": "About Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "language": {
+    "en": "English",
+    "zh": "中文",
+    "toast": {
+      "title": "Language updated",
+      "description": "Switched to {lang}"
+    }
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: June 3, 2024",
+    "sections": [
+      {
+        "content": "Your privacy is important to us. This Privacy Policy explains how Vibe Engineers (\\\"we\\\", \\\"us\\\", or \\\"our\\\") collects, uses, and protects your information when you use our Services."
+      },
+      {
+        "title": "Information We Collect",
+        "content": "We may collect information that you voluntarily provide, such as your name, email address, or other contact details. We also collect usage data automatically, including your IP address, browser type, and interactions with the Services."
+      },
+      {
+        "title": "How We Use Information",
+        "content": "We use the information we collect to operate, maintain, and improve the Services, to communicate with you, and to develop new features. We may also use your information to respond to inquiries or provide support."
+      },
+      {
+        "title": "Sharing of Information",
+        "content": "We do not sell your personal information. We may share information with trusted service providers who assist us in operating the Services, or when required by law. Any third parties are obligated to protect your information and use it only for the purposes we specify."
+      },
+      {
+        "title": "Cookies and Tracking",
+        "content": "Our Services may use cookies and similar technologies to enhance your experience, analyze usage, and deliver personalized content. You can adjust your browser settings to refuse cookies, but this may limit certain features of the Services."
+      },
+      {
+        "title": "Data Retention",
+        "content": "We retain personal information only for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law."
+      },
+      {
+        "title": "Your Rights",
+        "content": "You may request access to, correction of, or deletion of your personal information. To exercise these rights, please contact us at <emailLink>hello@vibe-engineers.com</emailLink>."
+      },
+      {
+        "title": "Security",
+        "content": "We implement reasonable safeguards to protect your information from unauthorized access, disclosure, or misuse. However, no security measures are perfect, and we cannot guarantee absolute security."
+      },
+      {
+        "title": "Changes to This Policy",
+        "content": "We may update this Privacy Policy from time to time. We will post the updated policy on this page and revise the \\\"Last updated\\\" date below. Continued use of the Services after changes are made constitutes acceptance of the updated policy."
+      },
+      {
+        "title": "Contact Us",
+        "content": "If you have any questions about this Privacy Policy, please contact us at <emailLink>hello@vibe-engineers.com</emailLink>."
+      }
+    ]
+  },
+  "termsOfService": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: June 3, 2024",
+    "sections": [
+      {
+        "content": "Welcome to Vibe Engineers. These Terms of Service (\\\"Terms\\\") govern your access to and use of our website, tools, and services (collectively, the \\\"Services\\\"). By accessing or using the Services, you agree to be bound by these Terms."
+      },
+      {
+        "title": "Use of Services",
+        "content": "Our Services are designed to help developers experiment with non-deterministic, playful tools. You agree to use the Services only for lawful purposes and in compliance with applicable laws and regulations. You are responsible for your conduct while using the Services and for any content you provide."
+      },
+      {
+        "title": "Intellectual Property",
+        "content": "Unless otherwise noted, all materials, features, and functionality included in the Services are owned by Vibe Engineers or our licensors and are protected by intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our prior written consent."
+      },
+      {
+        "title": "User Obligations",
+        "content": "You agree not to misuse the Services or interfere with their normal operation. Prohibited activities include, but are not limited to, attempting to gain unauthorized access to the Services, reverse engineering, or using the Services for any harmful or fraudulent purpose."
+      },
+      {
+        "title": "Termination",
+        "content": "We reserve the right to suspend or terminate your access to the Services at any time, with or without notice, for any reason, including if we believe you have violated these Terms."
+      },
+      {
+        "title": "Disclaimer of Warranties",
+        "content": "The Services are provided on an \\\"as is\\\" and \\\"as available\\\" basis without warranties of any kind, whether express or implied. We do not guarantee that the Services will be error-free or uninterrupted."
+      },
+      {
+        "title": "Limitation of Liability",
+        "content": "To the maximum extent permitted by law, Vibe Engineers shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Services."
+      },
+      {
+        "title": "Governing Law",
+        "content": "These Terms are governed by the laws of Singapore. Any disputes arising out of or relating to the Terms or the Services will be resolved in the courts located in California."
+      },
+      {
+        "title": "Contact Us",
+        "content": "If you have any questions about these Terms, please contact us at <emailLink>hello@vibe-engineers.com</emailLink>."
+      }
+    ]
+  }
+}
