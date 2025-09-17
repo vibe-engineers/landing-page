@@ -11,12 +11,12 @@ import {
 
 export const siteConfig = {
   url: 'https://vibe-engineers.dev',
-  ogImage: 'https://example.com/og.jpg',
+  ogImage: 'https://vibe-engineers.dev/images/landscape_thumbnail.jpg',
   links: {
     github: 'https://github.com/vibe-engineers',
     discord: 'https://discord.gg/dBW35GBCPZ',
     twitter: '#',
-    email: 'mailto:hello@vibe-engineers.com',
+    email: 'mailto:vibe.engineers.team@gmail.com',
   },
 }
 
