@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: 'Vibe Engineers',
     images: [
       {
-        url: 'https://picsum.photos/seed/vibes/1200/630',
+        url: 'https://vibe-engineers.dev/images/landscape_thumbnail.jpg',
         width: 1200,
         height: 630,
       },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Vibe Engineers',
     description: 'Bring vibes into your code.',
-    images: ['https://picsum.photos/seed/vibes/1200/630'],
+    images: ['https://vibe-engineers.dev/images/landscape_thumbnail.jpg'],
   },
 }
 
