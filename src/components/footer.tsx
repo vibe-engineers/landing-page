@@ -46,9 +46,7 @@ export default function Footer() {
               onClick={scrollToSection}
             >
               <Logo width={32} height={32} />
-              <span className="font-bold text-lg">
-                {t('siteConfig.name')}
-              </span>
+              <span className="font-bold text-lg">{t('siteConfig.name')}</span>
             </Link>
             <div className="mt-4 flex space-x-2">
               <Link
@@ -73,9 +71,7 @@ export default function Footer() {
           </div>
           <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-semibold">
-                {t('footer.nav.about.title')}
-              </h3>
+              <h3 className="font-semibold">{t('footer.nav.about.title')}</h3>
               <ul className="mt-4 space-y-2">
                 {footerNav.about.links.map((link) => (
                   <li key={link.key}>
@@ -107,9 +103,7 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold">
-                {t('footer.nav.legal.title')}
-              </h3>
+              <h3 className="font-semibold">{t('footer.nav.legal.title')}</h3>
               <ul className="mt-4 space-y-2">
                 {footerNav.legal.links.map((link) => (
                   <li key={link.key}>
@@ -134,4 +128,3 @@ export default function Footer() {
     </footer>
   )
 }
-

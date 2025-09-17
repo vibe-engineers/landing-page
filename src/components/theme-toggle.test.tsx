@@ -14,7 +14,9 @@ vi.mock('next-themes', () => ({
 
 test('renders toggle button', () => {
   render(<ThemeToggle />)
-  expect(screen.getByRole('button', { name: 'Toggle theme' })).toBeInTheDocument()
+  expect(
+    screen.getByRole('button', { name: 'Toggle theme' })
+  ).toBeInTheDocument()
 })
 
 test('calls setTheme on click', () => {

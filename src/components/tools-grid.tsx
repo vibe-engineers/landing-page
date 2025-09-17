@@ -50,12 +50,14 @@ export default function ToolsGrid() {
                     {t(`${tool.name}.valueProp`)}
                   </CardDescription>
                   <ul className="space-y-3 text-sm text-foreground/80">
-                    {t.raw(`${tool.name}.bullets`).map((bullet: string, i: number) => (
-                      <li key={i} className="flex items-start">
-                        <Check className="mr-2 mt-1 h-4 w-4 shrink-0 text-primary" />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
+                    {t
+                      .raw(`${tool.name}.bullets`)
+                      .map((bullet: string, i: number) => (
+                        <li key={i} className="flex items-start">
+                          <Check className="mr-2 mt-1 h-4 w-4 shrink-0 text-primary" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
                   </ul>
                 </div>
                 <Button

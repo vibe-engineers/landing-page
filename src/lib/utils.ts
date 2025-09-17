@@ -28,16 +28,10 @@ export function scrollToSection(event: ReactMouseEvent<HTMLAnchorElement>) {
 
   // case 2: hash-based scrolling
   if (href.includes('#')) {
-    const isOnHomePage = /^\/(en|zh)?$/.test(window.location.pathname)
-    if (!isOnHomePage) {
-      // not on homepage, let the browser handle it
-      return
-    }
-
     event.preventDefault()
     const hash = href.substring(href.indexOf('#'))
 
-    if (hash === '#' || hash === '#top') {
+    if (hash === '#') {
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
@@ -53,8 +47,11 @@ export function scrollToSection(event: ReactMouseEvent<HTMLAnchorElement>) {
           block: 'center',
         })
       } else {
-        // fallback: navigate as normal
-        window.location.hash = hash
+        const localeMatch = window.location.pathname.match(/^\/(en|zh)(?=\/|$)/)
+        const homePath = localeMatch ? `/${localeMatch[1]}` : '/'
+        const normalizedHomePath = homePath === '/' ? '' : homePath
+
+        window.location.href = `${normalizedHomePath}/#${hash.slice(1)}`
       }
     }
   }

@@ -42,7 +42,9 @@ export default function Philosophy() {
           <blockquote className="mx-auto max-w-4xl text-2xl font-semibold italic text-foreground/80">
             &quot;{t('quote')}&quot;
           </blockquote>
-          <p className="mt-4 text-lg text-foreground/70">— {t('quoteAuthor')}</p>
+          <p className="mt-4 text-lg text-foreground/70">
+            — {t('quoteAuthor')}
+          </p>
         </div>
       </div>
     </section>

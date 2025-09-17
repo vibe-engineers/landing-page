@@ -8,7 +8,9 @@ vi.spyOn(Math, 'random').mockReturnValue(0.5)
 test('renders confetti background with pieces', () => {
   const { container } = render(<ConfettiBackground />)
 
-  const confettiPieces = container.querySelectorAll('.motion-safe\\:animate-confetti')
+  const confettiPieces = container.querySelectorAll(
+    '.motion-safe\\:animate-confetti'
+  )
   expect(confettiPieces).toHaveLength(20)
 
   confettiPieces.forEach((piece) => {

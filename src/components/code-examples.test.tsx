@@ -40,9 +40,7 @@ test('renders code examples with title, subtitle, and tabs', async () => {
 
   expect(screen.getByText('codeExamples.title')).toBeInTheDocument()
   expect(screen.getByText('codeExamples.subtitle')).toBeInTheDocument()
-  expect(
-    screen.getByText('codeExamples.vibechecks.label')
-  ).toBeInTheDocument()
+  expect(screen.getByText('codeExamples.vibechecks.label')).toBeInTheDocument()
   expect(screen.getByText('codeExamples.viberetry.label')).toBeInTheDocument()
   expect(
     screen.getByText('codeExamples.vibechecks.description')

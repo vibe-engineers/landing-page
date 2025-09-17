@@ -3,8 +3,8 @@ import '../globals.css'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -44,19 +44,19 @@ export const viewport: Viewport = {
 
 // Add this function to tell Next.js which locales your app supports
 export function generateStaticParams() {
-  return [{locale: 'en'}, {locale: 'zh'}]; // Replace with your actual supported locales
+  return [{ locale: 'en' }, { locale: 'zh' }] // Replace with your actual supported locales
 }
 
 export default async function RootLayout({
   children,
-  params
+  params,
 }: {
-  children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  children: React.ReactNode
+  params: Promise<{ locale: string }>
 }) {
   // Await the params before accessing its properties
-  const { locale } = await params;
-  const messages = await getMessages({ locale });
+  const { locale } = await params
+  const messages = await getMessages({ locale })
 
   return (
     <html lang={locale} suppressHydrationWarning>

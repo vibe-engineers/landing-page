@@ -52,7 +52,7 @@ export const tools = [
     icon: Sparkles,
     learnMoreHref: '#examples',
   },
-    {
+  {
     name: 'viberetry',
     icon: RefreshCw,
     learnMoreHref: '#examples',
