@@ -143,7 +143,7 @@ export default function Header() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="right">
               <Link
                 href="/"
                 onClick={scrollToSection}
