@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl'
 export default function FAQ() {
   const t = useTranslations('faq')
   return (
-    <section id="faq" className="py-16 md:py-24">
+    <section>
       <div className="container px-4">
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">

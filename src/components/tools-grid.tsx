@@ -10,7 +10,6 @@ import {
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Link } from '@/navigation'
-import { scrollToSection } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 
 export default function ToolsGrid() {
@@ -20,7 +19,7 @@ export default function ToolsGrid() {
   )
 
   return (
-    <section id="tools" className="py-16 md:py-24">
+    <section>
       <div className="container px-4">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -65,7 +64,7 @@ export default function ToolsGrid() {
                   variant="link"
                   className="mt-6 px-0 justify-start"
                 >
-                  <Link href={tool.learnMoreHref} onClick={scrollToSection}>
+                  <Link href={tool.learnMoreHref} target="_blank" rel="noreferrer">
                     {t(`${tool.name}.learnMore`)} &rarr;
                   </Link>
                 </Button>

@@ -6,6 +6,7 @@ import CodeExamples from '@/components/code-examples'
 import CallToAction from '@/components/call-to-action'
 import FAQ from '@/components/faq'
 import Footer from '@/components/footer'
+import MotionSection from '@/components/motion-section'
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }]
@@ -17,11 +18,21 @@ export default function Home() {
       <Header />
       <main className="flex w-full flex-1 flex-col items-center">
         <Hero />
-        <ToolsGrid />
-        <Philosophy />
-        <CodeExamples />
-        <FAQ />
-        <CallToAction />
+        <MotionSection id="tools">
+          <ToolsGrid />
+        </MotionSection>
+        <MotionSection id="philosophy">
+          <Philosophy />
+        </MotionSection>
+        <MotionSection id="examples">
+          <CodeExamples />
+        </MotionSection>
+        <MotionSection id="faq">
+          <FAQ />
+        </MotionSection>
+        <MotionSection id="use-cases">
+          <CallToAction />
+        </MotionSection>
       </main>
       <Footer />
     </div>

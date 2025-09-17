@@ -38,24 +38,19 @@ export const heroContent = {
 
 export const tools = [
   {
-    name: 'vibetools',
-    icon: Wrench,
-    learnMoreHref: '#examples',
-  },
-  {
     name: 'vibechecks',
     icon: ShieldCheck,
-    learnMoreHref: '#examples',
+    learnMoreHref: 'https://pypi.org/project/vibechecks/',
   },
   {
     name: 'vibegen',
     icon: Sparkles,
-    learnMoreHref: '#examples',
+    learnMoreHref: 'https://pypi.org/project/vibegen/',
   },
   {
     name: 'viberetry',
     icon: RefreshCw,
-    learnMoreHref: '#examples',
+    learnMoreHref: 'https://pypi.org/project/viberetry/',
   },
 ]
 
