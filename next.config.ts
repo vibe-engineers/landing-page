@@ -5,6 +5,8 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   /* config options here */
+  distDir: 'build',
+  output: 'export',
   typescript: {
     ignoreBuildErrors: true,
   },
