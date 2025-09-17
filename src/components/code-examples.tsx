@@ -60,7 +60,7 @@ export default function CodeExamples() {
                     )}
                     <span className="sr-only">{t('copy')}</span>
                   </Button>
-                  <pre className="h-64 w-full overflow-auto rounded-b-lg bg-gray-900 dark:bg-black p-4 text-white">
+                  <pre className="h-64 w-full overflow-auto rounded-b-lg bg-gray-900 dark:bg-black p-4 text-white whitespace-pre-wrap">
                     <code>{example.code}</code>
                   </pre>
                 </div>
