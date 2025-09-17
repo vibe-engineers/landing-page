@@ -47,8 +47,11 @@ export function scrollToSection(event: ReactMouseEvent<HTMLAnchorElement>) {
           block: 'center',
         })
       } else {
-        // fallback: navigate as normal
-        window.location.hash = hash
+        const localeMatch = window.location.pathname.match(/^\/(en|zh)(?=\/|$)/)
+        const homePath = localeMatch ? `/${localeMatch[1]}` : '/'
+        const normalizedHomePath = homePath === '/' ? '' : homePath
+
+        window.location.href = `${normalizedHomePath}/#${hash.slice(1)}`
       }
     }
   }

@@ -6,7 +6,7 @@ import { Menu, Github, Languages, FileText, Shield } from 'lucide-react'
 import { FaDiscord } from 'react-icons/fa6'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { navLinks, siteConfig } from '@/lib/content'
 import { Logo } from '@/components/logo'
 import { scrollToSection } from '@/lib/utils'
@@ -143,34 +143,47 @@ export default function Header() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
-              <Link
-                href="/"
-                onClick={scrollToSection}
-                className="flex items-center space-x-2"
-              >
-                <Logo width={40} height={40} className="h-10 w-10" />
-                <span className="font-bold">{t('siteConfig.name')}</span>
-              </Link>
+            <SheetContent side="right">
+              <SheetClose asChild>
+                <Link
+                  href="/"
+                  onClick={scrollToSection}
+                  className="flex items-center space-x-2"
+                >
+                  <Logo width={40} height={40} className="h-10 w-10" />
+                  <span className="font-bold">{t('siteConfig.name')}</span>
+                </Link>
+              </SheetClose>
               <div className="mt-6 flex flex-col space-y-4">
                 {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={scrollToSection}
-                    className="text-foreground/80"
-                  >
-                    {t(`navLinks.${link.key}`)}
-                  </Link>
+                  <SheetClose asChild key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={scrollToSection}
+                      className="text-foreground/80"
+                    >
+                      {t(`navLinks.${link.key}`)}
+                    </Link>
+                  </SheetClose>
                 ))}
                 <div className="mt-4 border-t pt-4 flex flex-col space-y-4">
                   <span className="text-foreground/60">{t('legal.title')}</span>
-                  <Link href="/terms-of-service" className="text-foreground/80">
-                    {t('legal.terms')}
-                  </Link>
-                  <Link href="/privacy-policy" className="text-foreground/80">
-                    {t('legal.privacy')}
-                  </Link>
+                  <SheetClose asChild>
+                    <Link
+                      href="/terms-of-service"
+                      className="text-foreground/80"
+                    >
+                      {t('legal.terms')}
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link
+                      href="/privacy-policy"
+                      className="text-foreground/80"
+                    >
+                      {t('legal.privacy')}
+                    </Link>
+                  </SheetClose>
                 </div>
               </div>
             </SheetContent>
