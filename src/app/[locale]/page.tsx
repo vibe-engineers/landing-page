@@ -17,20 +17,22 @@ export default function Home() {
     <div className="flex min-h-screen flex-col items-center justify-center">
       <Header />
       <main className="flex w-full flex-1 flex-col items-center">
+        <MotionSection>
         <Hero />
-        <MotionSection id="tools">
+        </MotionSection>
+        <MotionSection>
           <ToolsGrid />
         </MotionSection>
-        <MotionSection id="philosophy">
+        <MotionSection>
           <Philosophy />
         </MotionSection>
-        <MotionSection id="examples">
+        <MotionSection>
           <CodeExamples />
         </MotionSection>
-        <MotionSection id="faq">
+        <MotionSection>
           <FAQ />
         </MotionSection>
-        <MotionSection id="use-cases">
+        <MotionSection>
           <CallToAction />
         </MotionSection>
       </main>

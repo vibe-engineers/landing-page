@@ -15,7 +15,7 @@ export default function CallToAction() {
   const tNotice = useTranslations('notice')
 
   return (
-    <section className="w-full py-16 md:py-24">
+    <section id="use-cases" className="w-full py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">

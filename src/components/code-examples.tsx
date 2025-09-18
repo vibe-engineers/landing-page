@@ -24,7 +24,7 @@ export default function CodeExamples() {
   }
 
   return (
-    <section className="py-16 md:py-24">
+    <section id="examples" className="py-16 md:py-24">
       <div className="container px-4">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">

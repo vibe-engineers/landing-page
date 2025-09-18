@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 export default function Philosophy() {
   const t = useTranslations('philosophy')
   return (
-    <section className="bg-background py-16 md:py-24">
+    <section id="philosophy" className="bg-background py-16 md:py-24">
       <div className="container px-4">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
