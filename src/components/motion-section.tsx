@@ -24,7 +24,6 @@ const MotionSection: FC<MotionSectionProps> = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
       transition={{ duration: 0.5, delay }}
-      className="py-16 md:py-24"
     >
       {children}
     </motion.section>

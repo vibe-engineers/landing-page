@@ -13,7 +13,7 @@ interface TeamPageProps {
 const TeamPage: FC<TeamPageProps> = ({ title, subtitle }) => {
   return (
     <MotionSection>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-16 md:py-24">
         <h1 className="text-4xl font-bold text-center mb-4">{title}</h1>
         <p className="text-xl text-foreground/80 text-center mb-12">
           {subtitle}

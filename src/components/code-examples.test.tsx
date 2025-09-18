@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { expect, test, vi } from 'vitest'
 
 import CodeExamples from '@/components/code-examples'
@@ -48,7 +49,7 @@ test('renders code examples with title, subtitle, and tabs', async () => {
   expect(screen.getByText('vibechecks code')).toBeInTheDocument()
 
   // Click on the second tab
-  fireEvent.click(screen.getByText('codeExamples.viberetry.label'))
+  await userEvent.click(screen.getByText('codeExamples.viberetry.label'))
 
   await waitFor(async () => {
     const viberetryTab = await screen.findByText(
@@ -65,7 +66,7 @@ test('renders code examples with title, subtitle, and tabs', async () => {
     // Click on the copy button
     const copyButton =
       within(viberetryTabContent).getByText('codeExamples.copy')
-    fireEvent.click(copyButton)
+    await userEvent.click(copyButton)
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith('viberetry code')
     expect(mockToast).toHaveBeenCalled()
   })
