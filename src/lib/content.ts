@@ -7,6 +7,8 @@ import {
   Rocket,
   BrainCircuit,
   Dices,
+  FileCode,
+  HelpCircle,
 } from 'lucide-react'
 
 export const siteConfig = {
@@ -21,10 +23,10 @@ export const siteConfig = {
 }
 
 export const navLinks = [
-  { href: '#tools', key: 'tools' },
-  { href: '#philosophy', key: 'philosophy' },
-  { href: '#examples', key: 'examples' },
-  { href: '#faq', key: 'faq' },
+  { href: '#tools', key: 'tools', icon: Wrench },
+  { href: '#philosophy', key: 'philosophy', icon: BrainCircuit },
+  { href: '#examples', key: 'examples', icon: FileCode },
+  { href: '#faq', key: 'faq', icon: HelpCircle },
 ]
 
 export const heroContent = {

@@ -2,7 +2,14 @@
 
 import { Link, usePathname } from '@/navigation'
 import { useLocale, useTranslations } from 'next-intl'
-import { Menu, Github, Languages, FileText, Shield, Users } from 'lucide-react'
+import {
+  Menu,
+  Github,
+  Languages,
+  FileText,
+  Shield,
+  Users,
+} from 'lucide-react'
 import { FaDiscord } from 'react-icons/fa6'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { Button } from '@/components/ui/button'
@@ -16,6 +23,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 import { useToast } from '@/hooks/use-toast'
 
 export default function Header() {
@@ -144,38 +157,102 @@ export default function Header() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
-              <Link
-                href="/"
-                onClick={scrollToSection}
-                className="flex items-center space-x-2"
-              >
-                <Logo width={40} height={40} className="h-10 w-10" />
-                <span className="font-bold">{t('siteConfig.name')}</span>
-              </Link>
-              <div className="mt-6 flex flex-col space-y-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={scrollToSection}
-                    className="text-foreground/80"
-                  >
-                    {t(`navLinks.${link.key}`)}
-                  </Link>
-                ))}
-                <div className="mt-4 border-t pt-4 flex flex-col space-y-4">
-                  <span className="text-foreground/60">{t('legal.title')}</span>
-                  <Link href="/team" className="text-foreground/80">
-                    {t('legal.team')}
-                  </Link>
-                  <Link href="/terms-of-service" className="text-foreground/80">
-                    {t('legal.terms')}
-                  </Link>
-                  <Link href="/privacy-policy" className="text-foreground/80">
-                    {t('legal.privacy')}
-                  </Link>
+            <SheetContent side="right" className="flex flex-col">
+              <div className="flex-grow">
+                <Link
+                  href="/"
+                  onClick={scrollToSection}
+                  className="flex items-center space-x-2"
+                >
+                  <Logo width={40} height={40} className="h-10 w-10" />
+                  <span className="font-bold">{t('siteConfig.name')}</span>
+                </Link>
+                <div className="mt-6 flex flex-col space-y-2">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={scrollToSection}
+                      className="flex items-center gap-2 rounded-md p-2 text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
+                    >
+                      <link.icon className="h-4 w-4" />
+                      {t(`navLinks.${link.key}`)}
+                    </Link>
+                  ))}
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="about-us" className="border-none">
+                      <AccordionTrigger className="flex items-center gap-2 rounded-md p-2 text-foreground/80 transition-colors hover:bg-accent hover:text-foreground [&[data-state=open]>svg]:rotate-180">
+                        {t('legal.title')}
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-0">
+                        <div className="mt-2 flex flex-col space-y-2 pl-4">
+                          {legalLinks.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="flex items-center gap-2 rounded-md p-2 text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
+                            >
+                              <item.icon className="h-4 w-4" />
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 </div>
+              </div>
+
+              <div className="mt-auto flex items-center justify-center gap-2 border-t pt-4">
+                <Link
+                  href={siteConfig.links.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button variant="ghost" size="icon" aria-label="GitHub">
+                    <Github className="h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link
+                  href={siteConfig.links.discord}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button variant="ghost" size="icon" aria-label="Discord">
+                    <FaDiscord className="h-5 w-5" />
+                  </Button>
+                </Link>
+                <ThemeToggle />
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      aria-label={t(`language.${locale}`)}
+                    >
+                      <Languages className="h-5 w-5" />
+                      <span className="sr-only">
+                        {t(`language.${locale}`)}
+                      </span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    {languageOptions.map((lang) => (
+                      <DropdownMenuItem asChild key={lang.locale}>
+                        <Link
+                          href={pathname}
+                          locale={lang.locale as any}
+                          scroll={false}
+                          className="flex items-center"
+                          onClick={() => handleLanguageSwitch(lang)}
+                        >
+                          <span className="mr-2">{lang.icon}</span>
+                          {lang.label}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </SheetContent>
           </Sheet>
