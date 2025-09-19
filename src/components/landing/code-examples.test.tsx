@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { expect, test, vi } from 'vitest'
 
-import CodeExamples from '@/components/code-examples'
+import CodeExamples from '@/components/landing/code-examples'
 
 const mockToast = vi.fn()
 

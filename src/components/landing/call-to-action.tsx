@@ -1,11 +1,15 @@
 'use client'
 
 import { heroContent } from '@/lib/content'
-import { Button } from './ui/button'
+import { Button } from '../common/ui/button'
 import { Link } from '@/navigation'
-import { Logo } from '@/components/logo'
+import { Logo } from '@/components/common/logo'
 import { scrollToSection } from '@/lib/utils'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from '@/components/common/ui/alert'
 import { AlertTriangle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 

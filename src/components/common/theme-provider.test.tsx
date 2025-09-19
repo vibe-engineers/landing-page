@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 
-import { ThemeProvider } from '@/components/theme-provider'
+import { ThemeProvider } from '@/components/common/theme-provider'
 
 vi.mock('next-themes', () => ({
   ThemeProvider: ({ children }: { children: React.ReactNode }) => (

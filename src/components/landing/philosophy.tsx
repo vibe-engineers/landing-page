@@ -1,6 +1,11 @@
 'use client'
 import { philosophyContent } from '@/lib/content'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/common/ui/card'
 import { useTranslations } from 'next-intl'
 
 export default function Philosophy() {

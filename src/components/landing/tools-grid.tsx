@@ -7,8 +7,8 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-} from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+} from '@/components/common/ui/card'
+import { Button } from '@/components/common/ui/button'
 import { Link } from '@/navigation'
 import { useTranslations } from 'next-intl'
 
@@ -64,7 +64,11 @@ export default function ToolsGrid() {
                   variant="link"
                   className="mt-6 px-0 justify-start"
                 >
-                  <Link href={tool.learnMoreHref} target="_blank" rel="noreferrer">
+                  <Link
+                    href={tool.learnMoreHref}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {t(`${tool.name}.learnMore`)} &rarr;
                   </Link>
                 </Button>

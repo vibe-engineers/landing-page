@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import '../globals.css'
 import { Inter } from 'next/font/google'
-import { ThemeProvider } from '@/components/theme-provider'
-import { Toaster } from '@/components/ui/toaster'
+import { ThemeProvider } from '@/components/common/theme-provider'
+import { Toaster } from '@/components/common/ui/toaster'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 

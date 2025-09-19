@@ -1,12 +1,12 @@
 'use client'
 
 import { Link } from '@/navigation'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/common/ui/button'
 import { heroContent } from '@/lib/content'
 import { Zap } from 'lucide-react'
-import { Logo } from '@/components/logo'
+import { Logo } from '@/components/common/logo'
 import { scrollToSection } from '@/lib/utils'
-import { ConfettiBackground } from '@/components/confetti'
+import { ConfettiBackground } from '@/components/landing/confetti'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 

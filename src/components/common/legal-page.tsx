@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import MotionSection from './motion-section'
+import MotionSection from '@/components/common/motion-section'
 
 interface LegalPageProps {
   title: string

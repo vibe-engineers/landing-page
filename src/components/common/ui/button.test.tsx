@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { expect, test } from 'vitest'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/common/ui/button'
 
 test('renders button with correct text', () => {
   render(<Button>Click me</Button>)

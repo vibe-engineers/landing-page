@@ -1,6 +1,6 @@
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-import LegalPage from '@/components/legal-page'
+import Header from '@/components/common/header'
+import Footer from '@/components/common/footer'
+import LegalPage from '@/components/common/legal-page'
 import { getTranslations } from 'next-intl/server'
 
 export default async function PrivacyPage() {

@@ -2,33 +2,26 @@
 
 import { Link, usePathname } from '@/navigation'
 import { useLocale, useTranslations } from 'next-intl'
-import {
-  Menu,
-  Github,
-  Languages,
-  FileText,
-  Shield,
-  Users,
-} from 'lucide-react'
+import { Menu, Github, Languages, FileText, Shield, Users } from 'lucide-react'
 import { FaDiscord } from 'react-icons/fa6'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { ThemeToggle } from '@/components/common/theme-toggle'
+import { Button } from '@/components/common/ui/button'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/common/ui/sheet'
 import { navLinks, siteConfig } from '@/lib/content'
-import { Logo } from '@/components/logo'
+import { Logo } from '@/components/common/logo'
 import { scrollToSection } from '@/lib/utils'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@/components/common/ui/dropdown-menu'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion'
+} from '@/components/common/ui/accordion'
 import { useToast } from '@/hooks/use-toast'
 
 export default function Header() {
@@ -231,9 +224,7 @@ export default function Header() {
                       aria-label={t(`language.${locale}`)}
                     >
                       <Languages className="h-5 w-5" />
-                      <span className="sr-only">
-                        {t(`language.${locale}`)}
-                      </span>
+                      <span className="sr-only">{t(`language.${locale}`)}</span>
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">

@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion'
+} from '@/components/common/ui/accordion'
 import { faqContent } from '@/lib/content'
 import { useTranslations } from 'next-intl'
 

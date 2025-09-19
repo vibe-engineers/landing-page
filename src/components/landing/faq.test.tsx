@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 
-import FAQ from '@/components/faq'
+import FAQ from '@/components/landing/faq'
 
 vi.mock('next-intl', () => ({
   useTranslations: (namespace: string) => (key: string) =>

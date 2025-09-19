@@ -1,6 +1,6 @@
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-import TeamPage from '@/components/team-page'
+import Header from '@/components/common/header'
+import Footer from '@/components/common/footer'
+import TeamPage from '@/components/team/team-page'
 import { getTranslations } from 'next-intl/server'
 
 export default async function Team() {

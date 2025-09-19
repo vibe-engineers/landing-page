@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 
-import CallToAction from '@/components/call-to-action'
+import CallToAction from '@/components/landing/call-to-action'
 
 vi.mock('next-intl', () => ({
   useTranslations: (namespace: string) => (key: string) =>

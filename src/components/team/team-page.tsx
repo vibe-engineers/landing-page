@@ -3,7 +3,7 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { teamMembers } from '@/lib/team'
-import MotionSection from './motion-section'
+import MotionSection from '@/components/common/motion-section'
 
 interface TeamPageProps {
   title: string

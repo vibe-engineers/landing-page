@@ -2,9 +2,14 @@
 
 import { useState } from 'react'
 import { Clipboard, Check } from 'lucide-react'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@/components/common/ui/tabs'
 import { codeExamples } from '@/lib/content'
-import { Button } from './ui/button'
+import { Button } from '../common/ui/button'
 import { useToast } from '@/hooks/use-toast'
 import { useTranslations } from 'next-intl'
 

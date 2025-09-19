@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 
-import { ConfettiBackground } from '@/components/confetti'
+import { ConfettiBackground } from '@/components/landing/confetti'
 
 vi.spyOn(Math, 'random').mockReturnValue(0.5)
 

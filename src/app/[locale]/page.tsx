@@ -1,12 +1,12 @@
-import Header from '@/components/header'
-import Hero from '@/components/hero'
-import ToolsGrid from '@/components/tools-grid'
-import Philosophy from '@/components/philosophy'
-import CodeExamples from '@/components/code-examples'
-import CallToAction from '@/components/call-to-action'
-import FAQ from '@/components/faq'
-import Footer from '@/components/footer'
-import MotionSection from '@/components/motion-section'
+import Header from '@/components/common/header'
+import Hero from '@/components/landing/hero'
+import ToolsGrid from '@/components/landing/tools-grid'
+import Philosophy from '@/components/landing/philosophy'
+import CodeExamples from '@/components/landing/code-examples'
+import CallToAction from '@/components/landing/call-to-action'
+import FAQ from '@/components/landing/faq'
+import Footer from '@/components/common/footer'
+import MotionSection from '@/components/common/motion-section'
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }]
@@ -18,7 +18,7 @@ export default function Home() {
       <Header />
       <main className="flex w-full flex-1 flex-col items-center">
         <MotionSection>
-        <Hero />
+          <Hero />
         </MotionSection>
         <MotionSection>
           <ToolsGrid />
