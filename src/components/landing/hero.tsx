@@ -4,7 +4,7 @@ import { Link } from '@/navigation'
 import { Button } from '@/components/common/ui/button'
 import { heroContent } from '@/lib/content'
 import { Zap } from 'lucide-react'
-import { Logo } from '@/components/common/logo'
+import { ThemedLogo } from '@/components/common/themed-logo'
 import { scrollToSection } from '@/lib/utils'
 import { ConfettiBackground } from '@/components/landing/confetti'
 import { useTranslations } from 'next-intl'
@@ -55,7 +55,12 @@ export default function Hero() {
           animate="visible"
         >
           <motion.div variants={itemVariants}>
-            <Logo width={150} height={150} />
+            <ThemedLogo
+              darkSrc="/images/dark-theme-logo.webp"
+              lightSrc="/images/light-theme-logo.webp"
+              width={150}
+              height={150}
+            />
           </motion.div>
           <motion.div
             className="mb-4 inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary"

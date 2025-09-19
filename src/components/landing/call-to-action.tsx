@@ -3,7 +3,7 @@
 import { heroContent } from '@/lib/content'
 import { Button } from '../common/ui/button'
 import { Link } from '@/navigation'
-import { Logo } from '@/components/common/logo'
+import { ThemedLogo } from '@/components/common/themed-logo'
 import { scrollToSection } from '@/lib/utils'
 import {
   Alert,
@@ -25,7 +25,13 @@ export default function CallToAction() {
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
             {t('title')}
           </h2>
-          <Logo width={200} height={200} className="mt-6" />
+          <ThemedLogo
+            darkSrc="/images/dark-theme-logo.webp"
+            lightSrc="/images/light-theme-logo.webp"
+            width={200}
+            height={200}
+            className="mt-6"
+          />
           <p className="mt-4 text-lg text-foreground/70">{t('subcopy')}</p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Button

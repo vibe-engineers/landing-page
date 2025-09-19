@@ -4,7 +4,7 @@ import { Link } from '@/navigation'
 import { useTranslations } from 'next-intl'
 import { siteConfig } from '@/lib/content'
 import { Button } from '@/components/common/ui/button'
-import { Logo } from '@/components/common/logo'
+import { ThemedLogo } from '@/components/common/themed-logo'
 import { Github } from 'lucide-react'
 import { FaDiscord } from 'react-icons/fa6'
 import { scrollToSection } from '@/lib/utils'
@@ -45,7 +45,12 @@ export default function Footer() {
               className="flex items-center space-x-2"
               onClick={scrollToSection}
             >
-              <Logo width={32} height={32} />
+              <ThemedLogo
+                darkSrc="/images/dark-theme-logo.webp"
+                lightSrc="/images/light-theme-logo.webp"
+                width={32}
+                height={32}
+              />
               <span className="font-bold text-lg">{t('siteConfig.name')}</span>
             </Link>
             <div className="mt-4 flex space-x-2">

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 
-import { Logo } from '@/components/logo'
+import { ThemedLogo } from '@/components/common/themed-logo'
 
 vi.mock('next/image', () => ({
   default: (props: any) => {
@@ -17,7 +17,12 @@ vi.mock('next-themes', () => ({
 }))
 
 test('renders light theme logo by default', () => {
-  render(<Logo />)
+  render(
+    <ThemedLogo
+      darkSrc="/images/dark-theme-logo.webp"
+      lightSrc="/images/light-theme-logo.webp"
+    />
+  )
 
   const logo = screen.getByAltText('Vibe Engineers Logo')
   expect(logo).toHaveAttribute('src', '/images/light-theme-logo.webp')

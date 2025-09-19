@@ -8,7 +8,7 @@ import { ThemeToggle } from '@/components/common/theme-toggle'
 import { Button } from '@/components/common/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/common/ui/sheet'
 import { navLinks, siteConfig } from '@/lib/content'
-import { Logo } from '@/components/common/logo'
+import { ThemedLogo } from '@/components/common/themed-logo'
 import { scrollToSection } from '@/lib/utils'
 import {
   DropdownMenu,
@@ -57,7 +57,13 @@ export default function Header() {
             onClick={scrollToSection}
             className="flex items-center space-x-2"
           >
-            <Logo width={40} height={40} className="h-10 w-10" />
+            <ThemedLogo
+              darkSrc="/images/dark-theme-logo.webp"
+              lightSrc="/images/light-theme-logo.webp"
+              width={40}
+              height={40}
+              className="h-10 w-10"
+            />
             <span className="hidden font-bold sm:inline-block">
               {t('siteConfig.name')}
             </span>
@@ -157,7 +163,13 @@ export default function Header() {
                   onClick={scrollToSection}
                   className="flex items-center space-x-2"
                 >
-                  <Logo width={40} height={40} className="h-10 w-10" />
+                  <ThemedLogo
+                    darkSrc="/images/dark-theme-logo.webp"
+                    lightSrc="/images/light-theme-logo.webp"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10"
+                  />
                   <span className="font-bold">{t('siteConfig.name')}</span>
                 </Link>
                 <div className="mt-6 flex flex-col space-y-2">
