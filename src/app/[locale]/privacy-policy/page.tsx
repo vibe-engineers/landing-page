@@ -3,8 +3,13 @@ import Footer from '@/components/common/footer'
 import { getTranslations } from 'next-intl/server'
 import MotionSection from '@/components/common/motion-section'
 
-export default async function PrivacyPage() {
-  const t = await getTranslations('privacyPolicy')
+export default async function PrivacyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'privacyPolicy' })
   const sections = t.raw('sections') as {
     title?: string
     content: string

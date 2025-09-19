@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/common/theme-provider'
 import { Toaster } from '@/components/common/ui/toaster'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -56,6 +56,7 @@ export default async function RootLayout({
 }) {
   // Await the params before accessing its properties
   const { locale } = await params
+  setRequestLocale(locale)
   const messages = await getMessages({ locale })
 
   return (

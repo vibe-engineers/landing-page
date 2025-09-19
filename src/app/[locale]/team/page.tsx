@@ -3,8 +3,13 @@ import Footer from '@/components/common/footer'
 import TeamPage from '@/components/team/team-page'
 import { getTranslations } from 'next-intl/server'
 
-export default async function Team() {
-  const t = await getTranslations('teamPage')
+export default async function Team({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'teamPage' })
 
   return (
     <div className="flex min-h-screen flex-col">
