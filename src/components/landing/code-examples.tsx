@@ -41,9 +41,9 @@ export default function CodeExamples() {
           <p className="mt-4 text-lg text-foreground/70">{t('subtitle')}</p>
         </div>
         <Tabs defaultValue="vibechecks" className="w-full max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3">
+          <TabsList className="flex w-full gap-2 sm:gap-4">
             {Object.keys(codeExamples).map((key) => (
-              <TabsTrigger key={key} value={key}>
+              <TabsTrigger key={key} value={key} className="flex-1">
                 {t(`${key}.label`)}
               </TabsTrigger>
             ))}

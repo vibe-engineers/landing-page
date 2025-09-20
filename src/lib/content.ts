@@ -128,10 +128,10 @@ print(f"The antonym of {user_input} is {antonym}")`,
     code: `from google import genai
 from viberetry import VibeRetry
 
-# create a google gemini client
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+# initialize client
+client = genai.Client(api_key=GEMINI_API_KEY)
 
-# create a viberetry instance using the above client and specify a model
+# wrap it in VibeRetry
 viberetry = VibeRetry(client, model="gemini-2.0-flash-lite")
 
 # the example below simulates a function that always raises an exception
