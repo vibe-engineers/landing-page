@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, type MouseEvent as ReactMouseEvent } from 'react'
 import { Link, usePathname } from '@/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { Menu, Github, Languages, FileText, Shield, Users } from 'lucide-react'
@@ -29,6 +30,7 @@ export default function Header() {
   const locale = useLocale()
   const pathname = usePathname()
   const { toast } = useToast()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const legalLinks = [
     { href: '/team', label: t('legal.team'), icon: Users },
@@ -46,6 +48,13 @@ export default function Header() {
       title: t('language.toast.title'),
       description: t('language.toast.description', { lang: lang.label }),
     })
+  }
+
+  function handleMobileNavigationClick(
+    event: ReactMouseEvent<HTMLAnchorElement>,
+  ) {
+    scrollToSection(event)
+    setIsMenuOpen(false)
   }
 
   return (
@@ -150,7 +159,7 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu */}
-          <Sheet>
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="h-5 w-5" />
@@ -161,7 +170,7 @@ export default function Header() {
               <div className="flex-grow">
                 <Link
                   href="/"
-                  onClick={scrollToSection}
+                  onClick={handleMobileNavigationClick}
                   className="flex items-center space-x-2"
                 >
                   <ThemedLogo
@@ -179,7 +188,7 @@ export default function Header() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      onClick={scrollToSection}
+                      onClick={handleMobileNavigationClick}
                       className="flex items-center gap-2 rounded-md p-2 text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
                     >
                       <link.icon className="h-4 w-4" />
