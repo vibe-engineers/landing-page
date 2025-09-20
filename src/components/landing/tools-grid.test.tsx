@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 
-import ToolsGrid from '@/components/tools-grid'
+import ToolsGrid from '@/components/landing/tools-grid'
 
 vi.mock('next-intl', () => ({
   useTranslations: (namespace: string) => {

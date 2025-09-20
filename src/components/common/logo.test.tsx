@@ -21,6 +21,7 @@ test('renders light theme logo by default', () => {
     <ThemedLogo
       darkSrc="/images/dark-theme-logo.webp"
       lightSrc="/images/light-theme-logo.webp"
+      alt="Vibe Engineers Logo"
     />
   )
 

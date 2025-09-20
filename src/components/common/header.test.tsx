@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 
-import Header from '@/components/header'
+import Header from '@/components/common/header'
 
 vi.mock('next/image', () => ({
   default: (props: any) => {

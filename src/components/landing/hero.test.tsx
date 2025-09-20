@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 
-import Hero from '@/components/hero'
+import Hero from '@/components/landing/hero'
 
 vi.mock('next-intl', () => ({
   useTranslations: (namespace: string) => (key: string) =>
@@ -19,7 +19,7 @@ vi.mock('@/navigation', () => ({
   Link: (props: any) => <a {...props} />,
 }))
 
-vi.mock('@/components/confetti', () => ({
+vi.mock('@/components/landing/confetti', () => ({
   ConfettiBackground: () => <div data-testid="confetti" />,
 }))
 
