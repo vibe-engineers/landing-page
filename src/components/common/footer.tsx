@@ -15,13 +15,13 @@ const footerNav = {
   about: {
     links: [
       { key: 'team', href: '/team' },
-      { key: 'sponsors', href: '#' },
+      { key: 'sponsors', href: 'https://github.com/sponsors/vibe-engineers' },
     ],
   },
   contribute: {
     links: [
-      { key: 'sponsor', href: '#' },
-      { key: 'contributions', href: '#' },
+      { key: 'sponsor', href: 'https://github.com/sponsors/vibe-engineers' },
+      { key: 'contributions', href: 'https://github.com/vibe-engineers' },
     ],
   },
   legal: {

@@ -25,11 +25,12 @@ export default function CallToAction() {
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
             {t('title')}
           </h2>
+          <p className="mt-4 text-lg text-foreground/70">{t('subtitle')}</p>
           <ThemedLogo
             darkSrc="/images/dark-theme-logo.webp"
             lightSrc="/images/light-theme-logo.webp"
-            width={200}
-            height={200}
+            width={240}
+            height={240}
             className="mt-6"
           />
           <p className="mt-4 text-lg text-foreground/70">{t('subcopy')}</p>

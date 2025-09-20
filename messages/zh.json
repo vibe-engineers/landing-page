@@ -77,7 +77,7 @@
         "title": "突破界限",
         "description": "我们挑战传统的编程范式，探索 AI 与代码交叉点上的可能性。"
       },
-      "contextAwareness": {
+      "adaptiveByDesign": {
         "title": "情境感知",
         "description": "我们的工具不仅了解您在做什么，还能感知周围的氛围和上下文。"
       }
@@ -112,6 +112,7 @@
   },
   "callToAction": {
     "title": "解锁新的可能性",
+    "subtitle": "因为为什么不呢？",
     "subcopy": "从更强健的系统到动态的用户体验，vibe 工程开辟了新的前沿。准备好开始构建了吗？",
     "primaryCta": "探索我们的工具",
     "secondaryCta": "加入社区"
@@ -273,6 +274,7 @@
     ]
   },
   "teamPage": {
-    "title": "认识我们的团队"
+    "title": "氛围小队",
+    "subtitle": "我们嗨，我们造，我们分享"
   }
 }

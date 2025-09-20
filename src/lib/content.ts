@@ -72,7 +72,7 @@ export const philosophyContent = {
     },
     {
       icon: BrainCircuit,
-      key: 'contextAwareness',
+      key: 'adaptiveByDesign',
     },
   ],
 }
@@ -122,13 +122,27 @@ print(f"The antonym of {user_input} is {antonym}")`,
   },
   viberetry: {
     label: 'viberetry',
-    code: `// AI-influenced jitter/backoff can vary.
-await viberetry.call(fetchWithBackoff, {
-  maxAttempts: 5,
-  strategy: "adaptive",
-  // highlight-next-line
-  guardrail: { timeoutMs: 8000 },
-});`,
+    code: `from google import genai
+from viberetry import VibeRetry
+
+# create a google gemini client
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
+# create a viberetry instance using the above client and specify a model
+viberetry = VibeRetry(client, model="gemini-2.0-flash-lite")
+
+# the example below simulates a function that always raises an exception
+# to demonstrate the retry mechanism
+@viberetry(max_retries=3, remarks="use exponential backoff")
+def simulate_failure() -> int:
+    """
+    This function raises a simulated exception to demonstrate the retry mechanism.
+    """
+    raise Exception("Simulated exception.")
+
+# this will fail, but the LLM will retry it a few times
+# before finally raising the exception
+simulate_failure()`,
   },
 }
 

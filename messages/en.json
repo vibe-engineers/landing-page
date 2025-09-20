@@ -13,81 +13,71 @@
     "announcement": "Pushing the boundaries of runtime logic",
     "tagline": "Bring vibes into your code.",
     "subcopy": "We're building the next generation of developer tools that inject AI into runtime logic. Our vibe tools are playful, non-deterministic, and designed to push the boundaries of what's possible.",
-    "primaryCta": "Explore Our Tools",
-    "secondaryCta": "Join the Community"
+    "primaryCta": "Our Vibe Toolkit",
+    "secondaryCta": "Vibe With Us"
   },
   "tools": {
-    "title": "Toolkit for a New Engineering Paradigm",
-    "subtitle": "Injecting AI into runtime logic to build adaptive, effortless, and creative applications.",
-    "more": "And more in the works...",
-    "vibetools": {
-      "name": "vibetools",
-      "valueProp": "Utility layer to wire AI decisions into control flow.",
-      "bullets": [
-        "Core functions for vibe-driven development",
-        "Seamless integration with existing logic",
-        "Foundation for all other vibe tools"
-      ],
-      "learnMore": "Learn More"
-    },
+    "title": "The Vibe Engineer's Toolkit",
+    "subtitle": "Drop these tools into your stack and let the vibes take over.",
+    "more": "The cauldron’s bubbling — more vibes on the way...",
     "vibechecks": {
       "name": "vibechecks",
-      "valueProp": "Fuzzy gates that nudge execution paths.",
+      "valueProp": "Flow with vibes: LLM-powered if-statements and loops!",
       "bullets": [
-        "Probabilistic branching and feature flagging",
-        "Adapt to changing conditions in real-time",
-        "Move beyond rigid if/else statements"
+        "Write conditions in natural language",
+        "Shift away from rigid if/else logic",
+        "Let the LLM guide your code paths"
       ],
-      "learnMore": "Learn More"
-    },
-    "viberetry": {
-      "name": "viberetry",
-      "valueProp": "Adaptive, AI-guided retry strategies.",
-      "bullets": [
-        "Intelligent backoff and jitter policies",
-        "Learn from failure patterns to improve reliability",
-        "Make your services more resilient"
-      ],
-      "learnMore": "Learn More"
+      "learnMore": "Start Vibing"
     },
     "vibegen": {
       "name": "vibegen",
-      "valueProp": "Generative helpers for scaffolding variants.",
+      "valueProp": "Fake it till you make it: LLM-powered function stubs with vibes.",
       "bullets": [
-        "Explore alternative implementations",
-        "A/B test different logic paths",
+        "Stub unimplemented functions",
+        "Generate return values on the fly",
         "Accelerate prototyping and development"
       ],
-      "learnMore": "Learn More"
+      "learnMore": "Start Vibing"
+    },
+    "viberetry": {
+      "name": "viberetry",
+      "valueProp": "If you don’t succeed: vibe, vibe again.",
+      "bullets": [
+        "Retry with natural-language policies",
+        "Context-aware error handling",
+        "Real-time adaptive strategies"
+      ],
+      "learnMore": "Start Vibing"
     }
   },
   "philosophy": {
     "title": "Our Philosophy",
-    "subtitle": "We're not just building tools—we're reimagining how developers interact with logic, conditions, and control flow in the age of AI.",
+    "subtitle": "We're not just vibing — we're reimagining how developers interact with logic, conditions, and control flow in the age of AI.",
     "principles": {
       "playful": {
-        "title": "Playful by Design",
-        "description": "We believe code should be fun. Our tools inject personality and creativity into technical processes."
+        "title": "Playful by Nature",
+        "description": "Code should spark joy. Our tools inject personality and creativity into technical processes."
       },
       "nonDeterminism": {
         "title": "Embracing Non-Determinism",
-        "description": "Not all logic needs to be predictable. Sometimes the best solutions emerge from controlled randomness."
+        "description": "Not everything needs to be predictable. Sometimes the best vibes come from a little chaos, beautifully controlled"
       },
       "boundaryPushing": {
         "title": "Boundary Pushing",
-        "description": "We challenge conventional programming paradigms and explore what's possible at the intersection of AI and code."
+        "description": "We challenge conventional paradigms and explore what's possible when code is given a little room to vibe."
       },
-      "contextAwareness": {
-        "title": "Context Awareness",
-        "description": "Our tools understand not just what you're doing, but the vibe and context around it."
+      "adaptiveByDesign": {
+        "title": "Adaptive By Design",
+        "description": "AI lives inside the runtime, adapting logic and control flow as the vibe moves."
       }
     },
     "quote": "Why settle for boring, predictable code when you can have code with personality, context, and a little bit of magic?",
-    "quoteAuthor": "The Vibe Engineers Team"
+    "quoteAuthor": "The Vibe Crew"
   },
   "codeExamples": {
     "title": "See the Vibes in Action",
-    "subtitle": "Explore how to use our tools with some of these simple, vibey examples.",
+    "subtitle": "Check out the vibes in these quick and simple examples.",
     "copy": "Copy code",
     "copied": {
       "title": "Copied to clipboard!",
@@ -99,11 +89,11 @@
     },
     "viberetry": {
       "label": "viberetry",
-      "description": "An AI-powered retry mechanism that adapts its strategy based on previous attempts, with a safety timeout."
+      "description": "An AI-powered retry mechanism that adapts its strategy based on previous attempts."
     },
     "vibegen": {
       "label": "vibegen",
-      "description": "Generate and test multiple variants of a function to find the most optimal implementation."
+      "description": "Generate responses for an unimplemented function."
     }
   },
   "notice": {
@@ -111,14 +101,15 @@
     "description": "Our tools are non-deterministic by design. They embrace randomness and AI-driven variability to explore novel solutions. We strongly recommend implementing robust guardrails, monitoring, and observability to ensure your applications remain safe and predictable where it counts."
   },
   "callToAction": {
-    "title": "Unlock New Possibilities",
-    "subcopy": "From more robust systems to dynamic user experiences, vibe engineering opens up a new frontier. Ready to start building?",
+    "title": "Unleash the Vibes",
+    "subtitle": "Because why not?",
+    "subcopy": "Your stack deserves more than logic — it deserves vibes. Plug in and vibe with us!",
     "primaryCta": "Explore Our Tools",
-    "secondaryCta": "Join the Community"
+    "secondaryCta": "Vibe With Us"
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Answers to common questions about the Vibe Engineers toolkit.",
+    "subtitle": "Because even good vibes come with questions.",
     "q1": {
       "question": "What's the difference between determinism and 'vibes'?",
       "answer": "Deterministic code produces the same output for a given input every time. Code with 'vibes' introduces non-determinism, allowing AI to explore different behaviors and outcomes, which can lead to more creative and resilient solutions. It's about trading strict predictability for adaptive potential."
@@ -152,7 +143,7 @@
       "about": {
         "title": "About us",
         "links": {
-          "team": "Our Team",
+          "team": "The Vibe Crew",
           "sponsors": "Sponsors"
         }
       },
@@ -174,7 +165,7 @@
   },
   "legal": {
     "title": "About Us",
-    "team": "Our Team",
+    "team": "The Vibe Crew",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   },
@@ -273,7 +264,7 @@
     ]
   },
   "teamPage": {
-    "title": "Meet the Team",
-    "subtitle": "Meet the architects of the vibe. We live and breathe code that feels good."
+    "title": "The Vibe Crew",
+    "subtitle": "We vibe, we build, we share."
   }
 }
