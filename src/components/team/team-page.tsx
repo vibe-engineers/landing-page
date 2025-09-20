@@ -1,9 +1,11 @@
 'use client'
 
-import { FC } from 'react'
+import Image from 'next/image'
+import { FC, PointerEvent, useCallback, useState } from 'react'
 import { motion } from 'framer-motion'
 import { teamMembers } from '@/lib/team'
 import MotionSection from '@/components/common/motion-section'
+import { cn } from '@/lib/utils'
 
 interface TeamPageProps {
   title: string
@@ -11,6 +13,21 @@ interface TeamPageProps {
 }
 
 const TeamPage: FC<TeamPageProps> = ({ title, subtitle }) => {
+  const [activeMemberIndex, setActiveMemberIndex] = useState<number | null>(
+    null
+  )
+
+  const handleTouchToggle = useCallback(
+    (index: number) => (event: PointerEvent<HTMLDivElement>) => {
+      if (event.pointerType !== 'touch' && event.pointerType !== 'pen') {
+        return
+      }
+
+      setActiveMemberIndex((current) => (current === index ? null : index))
+    },
+    []
+  )
+
   return (
     <MotionSection>
       <div className="bg-background text-foreground">
@@ -26,16 +43,35 @@ const TeamPage: FC<TeamPageProps> = ({ title, subtitle }) => {
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={index}
-                  className="text-center"
+                  className="text-center group"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  onPointerDown={handleTouchToggle(index)}
                 >
-                  <img
-                    src={member.avatar}
-                    alt={member.name}
-                    className="w-32 h-32 rounded-full mx-auto mb-4"
-                  />
+                  <div className="relative w-32 h-32 mx-auto mb-4">
+                    <Image
+                      src={member.avatarSketch}
+                      alt={`${member.name} portrait illustration`}
+                      fill
+                      sizes="8rem"
+                      className={cn(
+                        'rounded-full object-cover shadow-lg transition-opacity duration-500 ease-out group-hover:opacity-0',
+                        activeMemberIndex === index && 'opacity-0'
+                      )}
+                    />
+                    <Image
+                      src={member.avatar}
+                      alt=""
+                      aria-hidden="true"
+                      fill
+                      sizes="8rem"
+                      className={cn(
+                        'rounded-full object-cover shadow-lg opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100',
+                        activeMemberIndex === index && 'opacity-100'
+                      )}
+                    />
+                  </div>
                   <h3 className="text-xl font-semibold">{member.name}</h3>
                   <p className="text-foreground/70">{member.role}</p>
                 </motion.div>

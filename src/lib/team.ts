@@ -1,12 +1,14 @@
 export const teamMembers = [
   {
     name: 'Kong Le-Yi',
-    role: 'Lead Vibe Engineer',
+    role: 'Vibe Dreamer',
     avatar: '/images/kly.jpg',
+    avatarSketch: '/images/kly-sketch.png',
   },
   {
     name: 'Tan Jin',
-    role: 'Lead Vibe Engineer',
+    role: 'Vibe Dreamer',
     avatar: '/images/tj.jpg',
+    avatarSketch: '/images/tj-sketch.png',
   },
 ]
