@@ -58,6 +58,7 @@ export default function Hero() {
             <ThemedLogo
               darkSrc="/images/dark-theme-logo.webp"
               lightSrc="/images/light-theme-logo.webp"
+              alt="Vibe Engineers Logo"
               width={150}
               height={150}
             />

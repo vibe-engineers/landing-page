@@ -23,7 +23,7 @@ export default async function PrivacyPage({
           <div className="bg-background text-foreground">
             <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
               <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl mb-12">
+                <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl mb-12 text-center">
                   {t('title')}
                 </h1>
                 <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-6">

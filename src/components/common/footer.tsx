@@ -48,6 +48,7 @@ export default function Footer() {
               <ThemedLogo
                 darkSrc="/images/dark-theme-logo.webp"
                 lightSrc="/images/light-theme-logo.webp"
+                alt="Vibe Engineers Logo"
                 width={32}
                 height={32}
               />

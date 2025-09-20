@@ -60,6 +60,7 @@ export default function Header() {
             <ThemedLogo
               darkSrc="/images/dark-theme-logo.webp"
               lightSrc="/images/light-theme-logo.webp"
+              alt="Vibe Engineers Logo"
               width={40}
               height={40}
               className="h-10 w-10"
@@ -166,6 +167,7 @@ export default function Header() {
                   <ThemedLogo
                     darkSrc="/images/dark-theme-logo.webp"
                     lightSrc="/images/light-theme-logo.webp"
+                    alt="Vibe Engineers Logo"
                     width={40}
                     height={40}
                     className="h-10 w-10"

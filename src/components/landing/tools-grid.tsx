@@ -11,6 +11,7 @@ import {
 import { Button } from '@/components/common/ui/button'
 import { Link } from '@/navigation'
 import { useTranslations } from 'next-intl'
+import { ThemedLogo } from '@/components/common/themed-logo'
 
 export default function ToolsGrid() {
   const t = useTranslations('tools')
@@ -34,8 +35,15 @@ export default function ToolsGrid() {
               className="flex flex-col overflow-hidden shadow-lg transition-transform motion-safe:hover:-translate-y-2"
             >
               <CardHeader className="flex flex-row items-center gap-4 pb-4">
-                <div className="rounded-lg bg-primary/10 p-3">
-                  <tool.icon className="h-6 w-6 text-primary" />
+                <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-lg bg-primary/10">
+                  <ThemedLogo
+                    lightSrc={tool.lightImageSrc}
+                    darkSrc={tool.darkImageSrc}
+                    alt={`${t(`${tool.name}.name`)} logo`}
+                    width={48}
+                    height={48}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <div>
                   <CardTitle className="text-xl font-bold">

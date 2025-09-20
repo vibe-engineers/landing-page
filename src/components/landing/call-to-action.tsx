@@ -29,6 +29,7 @@ export default function CallToAction() {
           <ThemedLogo
             darkSrc="/images/dark-theme-logo.webp"
             lightSrc="/images/light-theme-logo.webp"
+            alt="Vibe Engineers Logo"
             width={240}
             height={240}
             className="mt-6"

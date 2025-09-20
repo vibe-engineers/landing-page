@@ -41,17 +41,20 @@ export const heroContent = {
 export const tools = [
   {
     name: 'vibechecks',
-    icon: ShieldCheck,
+    lightImageSrc: '/images/light-theme-vibechecks.webp',
+    darkImageSrc: '/images/dark-theme-vibechecks.webp',
     learnMoreHref: 'https://pypi.org/project/vibechecks/',
   },
   {
     name: 'vibegen',
-    icon: Sparkles,
+    lightImageSrc: '/images/light-theme-vibegen.webp',
+    darkImageSrc: '/images/dark-theme-vibegen.webp',
     learnMoreHref: 'https://pypi.org/project/vibegen/',
   },
   {
     name: 'viberetry',
-    icon: RefreshCw,
+    lightImageSrc: '/images/light-theme-viberetry.webp',
+    darkImageSrc: '/images/dark-theme-viberetry.webp',
     learnMoreHref: 'https://pypi.org/project/viberetry/',
   },
 ]

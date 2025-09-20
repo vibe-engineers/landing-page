@@ -4,12 +4,12 @@ import Image, { ImageProps } from 'next/image'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
-type LogoProps = Omit<ImageProps, 'src' | 'alt'> & {
+type LogoProps = Omit<ImageProps, 'src'> & {
   darkSrc?: string
   lightSrc?: string
 }
 
-export function ThemedLogo({ darkSrc, lightSrc, ...props }: LogoProps) {
+export function ThemedLogo({ darkSrc, lightSrc, alt, ...props }: LogoProps) {
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -17,5 +17,5 @@ export function ThemedLogo({ darkSrc, lightSrc, ...props }: LogoProps) {
 
   const src = mounted && resolvedTheme === 'dark' ? darkSrc : lightSrc
 
-  return <Image src={src ?? ''} alt="Vibe Engineers Logo" {...props} />
+  return <Image src={src ?? ''} alt={alt} {...props} />
 }

@@ -16,10 +16,10 @@ const TeamPage: FC<TeamPageProps> = ({ title, subtitle }) => {
       <div className="bg-background text-foreground">
         <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl mb-12 text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl mb-4 text-center">
               {title}
             </h1>
-            <p className="text-xl text-foreground/80 text-center mb-12">
+            <p className="text-xl text-foreground/80 text-center mb-28">
               {subtitle}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
