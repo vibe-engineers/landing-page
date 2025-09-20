@@ -116,7 +116,7 @@
     },
     "q2": {
       "question": "How can I manage my API costs and limits?",
-      "answer": "Vibe Engineers tools come with configurable modes (e.g. 'LAX', 'AGGRESSIVE') to help manage API usage. If you are concerned about costs, consider using Google Gemini API which provides a free tier for experimentation."
+      "answer": "Vibe Engineers tools come with configurable modes (e.g. 'CHILL', 'EAGER', 'AGGRESSIVE') to help manage API usage. If you are concerned about costs, consider using Google Gemini API which provides a free tier for experimentation."
     },
     "q3": {
       "question": "Can I use vibe tools in production?",
@@ -179,7 +179,7 @@
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Last updated: June 3, 2024",
+    "lastUpdated": "Last updated: September 21, 2025",
     "sections": [
       {
         "content": "Your privacy is important to us. This Privacy Policy explains how Vibe Engineers (\\\"we\\\", \\\"us\\\", or \\\"our\\\") collects, uses, and protects your information when you use our Services."
@@ -224,7 +224,7 @@
   },
   "termsOfService": {
     "title": "Terms of Service",
-    "lastUpdated": "Last updated: June 3, 2024",
+    "lastUpdated": "Last updated: September 21, 2025",
     "sections": [
       {
         "content": "Welcome to Vibe Engineers. These Terms of Service (\\\"Terms\\\") govern your access to and use of our website, tools, and services (collectively, the \\\"Services\\\"). By accessing or using the Services, you agree to be bound by these Terms."

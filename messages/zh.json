@@ -1,7 +1,7 @@
 {
   "siteConfig": {
     "name": "Vibe Engineers",
-    "description": "Vibe Engineers 构建有趣的、突破性的工具，让 AI 影响运行时控制流。"
+    "description": "Vibe Engineers 打造充满趣味、突破边界的工具，让 AI 影响运行时控制流。"
   },
   "navLinks": {
     "tools": "工具",
@@ -11,63 +11,53 @@
   },
   "hero": {
     "announcement": "推动运行时逻辑的边界",
-    "tagline": "将“感觉”带入您的代码。",
-    "subcopy": "我们正在构建下一代开发者工具，将 AI 注入运行时逻辑。我们的 vibe 工具充满趣味、不确定性，旨在推动可能性的边界。",
-    "primaryCta": "探索我们的工具",
-    "secondaryCta": "加入社区"
+    "tagline": "将 Vibe 带入您的代码。",
+    "subcopy": "我们正在构建下一代开发者工具，将 AI 注入运行时逻辑。我们的 vibe 工具充满趣味、具有非确定性，旨在突破可能性的极限。",
+    "primaryCta": "我们的 Vibe 工具包",
+    "secondaryCta": "和我们一起 Vibe"
   },
   "tools": {
-    "title": "不断发展的工具包，迎接新的工程范式",
-    "subtitle": "将 AI 注入运行时逻辑，构建自适应、有弹性且富有创造力的应用程序。",
-    "more": "更多工具正在开发中...",
-    "vibetools": {
-      "name": "vibetools",
-      "valueProp": "用于将 AI 决策接入控制流的实用工具层。",
-      "bullets": [
-        "“感觉”驱动开发的核心功能",
-        "与现有逻辑无缝集成",
-        "所有其他 vibe 工具的基础"
-      ],
-      "learnMore": "了解更多"
-    },
+    "title": "Vibe 工程师的工具包",
+    "subtitle": "把这些工具放进你的技术栈，让 Vibe 接管一切。",
+    "more": "炼丹炉正沸腾——更多氛围即将到来...",
     "vibechecks": {
       "name": "vibechecks",
-      "valueProp": "引导执行路径的模糊门。",
+      "valueProp": "跟随 Vibe 流动：由大语言模型驱动的 if 语句和循环！",
       "bullets": [
-        "概率性分支和功能标记",
-        "实时适应变化的条件",
-        "超越僵化的 if/else 语句"
+        "用自然语言编写条件",
+        "摆脱僵硬的 if/else 逻辑",
+        "让大模型引导你的代码路径"
       ],
-      "learnMore": "了解更多"
+      "learnMore": "开始 Vibe"
     },
     "viberetry": {
       "name": "viberetry",
-      "valueProp": "自适应、AI 引导的重试策略。",
+      "valueProp": "初次不成，继续 Vibe。",
       "bullets": [
-        "智能退避和抖动策略",
-        "从失败模式中学习以提高可靠性",
-        "使您的服务更具弹性"
+        "用自然语言描述重试策略",
+        "具备语境感知的错误处理",
+        "实时调整的自适应方案"
       ],
-      "learnMore": "了解更多"
+      "learnMore": "开始 Vibe"
     },
     "vibegen": {
       "name": "vibegen",
-      "valueProp": "用于搭建变体的生成式助手。",
+      "valueProp": "先装到位再说：由大模型驱动、充满 Vibe 的函数桩。",
       "bullets": [
-        "探索替代实现",
-        "A/B 测试不同的逻辑路径",
-        "加速原型设计和开发"
+        "为未实现的函数搭建桩件",
+        "即时生成返回值",
+        "加速原型设计与开发"
       ],
-      "learnMore": "了解更多"
+      "learnMore": "开始 Vibe"
     }
   },
   "philosophy": {
     "title": "我们的理念",
-    "subtitle": "我们不只是在构建工具——我们正在重新构想在 AI 时代，开发者如何与逻辑、条件和控制流互动。",
+    "subtitle": "我们不只是在 Vibe — 我们正在重新构想在 AI 时代，开发者如何与逻辑、条件和控制流互动。",
     "principles": {
       "playful": {
         "title": "设计充满趣味",
-        "description": "我们相信代码应该是有趣的。我们的工具为技术过程注入个性和创造力。"
+        "description": "代码应该是有趣的。我们的工具为技术过程注入个性和创造力。"
       },
       "nonDeterminism": {
         "title": "拥抱不确定性",
@@ -79,7 +69,7 @@
       },
       "adaptiveByDesign": {
         "title": "情境感知",
-        "description": "我们的工具不仅了解您在做什么，还能感知周围的氛围和上下文。"
+        "description": "AI 融入运行时，随着氛围流动实时调整逻辑与控制流。"
       }
     },
     "quote": "当你可以让代码带上个性、上下文和一点魔力时，为什么还要满足于无聊、可预测的代码？",
@@ -87,7 +77,7 @@
   },
   "codeExamples": {
     "title": "亲眼见证 Vibe 的实际表现",
-    "subtitle": "通过这些简单而有趣的示例，探索如何使用我们的工具。",
+    "subtitle": "看看这些轻量又有趣的示例里 Vibe 如何流动。",
     "copy": "复制代码",
     "copied": {
       "title": "已复制到剪贴板！",
@@ -95,15 +85,15 @@
     },
     "vibechecks": {
       "label": "vibechecks",
-      "description": "基于 AI 影响的布尔值来确定代码路径的条件检查。"
+      "description": "根据受 AI 影响的布尔结果来决定代码路径的条件检查。"
     },
     "viberetry": {
       "label": "viberetry",
-      "description": "一种 AI 驱动的重试机制，它根据先前的尝试调整其策略，并带有安全超时。"
+      "description": "一种 AI 驱动的重试机制，会根据先前的尝试调整策略。"
     },
     "vibegen": {
       "label": "vibegen",
-      "description": "生成并测试函数的多个变体，以找到最优的实现。"
+      "description": "为尚未实现的函数生成返回结果。"
     }
   },
   "notice": {
@@ -111,26 +101,26 @@
     "description": "我们的工具在设计之初就具有不确定性。它们拥抱随机性和 AI 驱动的可变性，以探索新颖的解决方案。我们强烈建议实施健全的防护措施、监控和可观测性，以确保您的应用程序在关键之处保持安全和可预测。"
   },
   "callToAction": {
-    "title": "解锁新的可能性",
-    "subtitle": "因为为什么不呢？",
-    "subcopy": "从更强健的系统到动态的用户体验，vibe 工程开辟了新的前沿。准备好开始构建了吗？",
-    "primaryCta": "探索我们的工具",
-    "secondaryCta": "加入社区"
+    "title": "释放 Vibe",
+    "subtitle": "因为何乐不为？",
+    "subcopy": "你的技术栈值得拥有的不只是逻辑——它也值得拥有 Vibe。接入我们，和我们一起 Vibe！",
+    "primaryCta": "我们的 Vibe 工具包",
+    "secondaryCta": "和我们一起 Vibe"
   },
   "faq": {
     "title": "常见问题",
-    "subtitle": "关于 Vibe Engineers 工具包的常见问题解答。",
+    "subtitle": "因为即使是 Good Vibes，同样会带来问题。",
     "q1": {
       "question": "确定性与“感觉”之间有什么区别？",
       "answer": "确定性代码每次为给定输入产生相同的输出。带有“感觉”的代码引入了不确定性，允许 AI 探索不同的行为和结果，这可以带来更具创造性和弹性的解决方案。这是用严格的可预测性换取自适应的潜力。"
     },
     "q2": {
       "question": "如何管理我的 API 成本和限制？",
-      "answer": "Vibe Engineers 工具带有可配置的模式（例如“LAX”、“AGGRESSIVE”），以帮助管理 API 使用。如果您担心成本，可以考虑使用 Google Gemini API，它为实验提供免费套餐。"
+      "answer": "Vibe Engineers 工具带有可配置的模式（例如“CHILL”、“EAGER”、“AGGRESSIVE”），以帮助管理 API 使用。如果您担心成本，可以考虑使用 Google Gemini API，它为实验提供免费套餐。"
     },
     "q3": {
       "question": "我可以在生产环境中使用 vibe 工具吗？",
-      "answer": "是的，但要从小处着手，密切监控并评估您的用例。这些工具是为实验而构建的，一旦您加入了护栏、回退和增量部署来控制风险，就可以为生产系统提供支持。"
+      "answer": "可以，但请从小处起步、密切监控，并持续评估你的用例。这些工具为实验而生；当你逐步加入护栏、回退方案和渐进式发布来控制风险时，它们同样可以驱动生产系统。"
     },
     "q4": {
       "question": "这些工具需要特定的语言或框架吗？",
@@ -146,14 +136,14 @@
     }
   },
   "footer": {
-    "love": "由",
+    "love": "来自",
     "team": "Vibe Engineers 团队倾情呈现",
     "rights": "版权所有。",
     "nav": {
       "about": {
         "title": "关于我们",
         "links": {
-          "team": "我们的团队",
+          "team": "Vibe 团队",
           "sponsors": "赞助商"
         }
       },
@@ -165,7 +155,7 @@
         }
       },
       "legal": {
-        "title": "法律",
+        "title": "法律信息",
         "links": {
           "terms": "服务条款",
           "privacy": "隐私政策"
@@ -175,7 +165,7 @@
   },
   "legal": {
     "title": "关于我们",
-    "team": "我们的团队",
+    "team": "Vibe 团队",
     "privacy": "隐私政策",
     "terms": "服务条款"
   },
@@ -189,7 +179,7 @@
   },
   "privacyPolicy": {
     "title": "隐私政策",
-    "lastUpdated": "最后更新日期：2024年6月3日",
+    "lastUpdated": "最后更新日期：2025年9月21日",
     "sections": [
       {
         "content": "您的隐私对我们很重要。本隐私政策解释了 Vibe Engineers（“我们”或“我们的”）在您使用我们的服务时如何收集、使用和保护您的信息。"
@@ -234,7 +224,7 @@
   },
   "termsOfService": {
     "title": "服务条款",
-    "lastUpdated": "最后更新日期：2024年6月3日",
+    "lastUpdated": "最后更新日期：2025年9月21日",
     "sections": [
       {
         "content": "欢迎来到 Vibe Engineers。本服务条款（“条款”）管辖您对我们网站、工具和服务（统称为“服务”）的访问和使用。通过访问或使用服务，您同意受本条款的约束。"
@@ -274,7 +264,7 @@
     ]
   },
   "teamPage": {
-    "title": "氛围小队",
-    "subtitle": "我们嗨，我们造，我们分享"
+    "title": "Vibe 团队",
+    "subtitle": "我们嗨，我们构建，我们分享。"
   }
 }
