@@ -90,11 +90,11 @@ from vibechecks import VibeCheck
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 # wrap it in VibeCheck
-vc = VibeCheck(client, model="gemini-2.0-flash-lite")
+vibecheck = VibeCheck(client, model="gemini-2.0-flash-lite")
 
 # the example below asks user for a dog breed and checks if it is valid
 user_input = input("Enter a dog breed:")
-if vc(f"{user_input} is a valid dog breed"):
+if vibecheck(f"{user_input} is a valid dog breed"):
     print(f"{user_input} is a valid dog breed!")
 else:
     print(f"{user_input} is not a valid dog breed!")`,
@@ -108,9 +108,9 @@ from vibegen import VibeGen
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 # wrap it in VibeGen
-vg = VibeGen(client, model="gemini-2.0-flash-lite")
+vibegen = VibeGen(client, model="gemini-2.0-flash-lite")
 
-@vg
+@vibegen
 def get_antonym(word: str) -> str:
     """
     This function takes a word and returns its antonym.
@@ -118,7 +118,7 @@ def get_antonym(word: str) -> str:
     """
     pass
 
-# a simple example that gets the antonym of a word
+# the example below gets the antonym of a word
 user_input = input("Enter a word:")
 antonym = get_antonym(user_input)
 print(f"The antonym of {user_input} is {antonym}")`,
