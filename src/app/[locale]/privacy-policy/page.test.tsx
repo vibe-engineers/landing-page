@@ -54,7 +54,9 @@ import PrivacyPage from '@/app/[locale]/privacy-policy/page'
  * Ensures the privacy policy route fetches translations and renders the expected content.
  */
 async function rendersTranslatedContentSections() {
-  const element = await PrivacyPage({ params: Promise.resolve({ locale: 'zh' }) })
+  const element = await PrivacyPage({
+    params: Promise.resolve({ locale: 'zh' }),
+  })
   const { container } = render(element)
 
   expect(getTranslationsMock).toHaveBeenCalledWith({
@@ -62,8 +64,12 @@ async function rendersTranslatedContentSections() {
     namespace: 'privacyPolicy',
   })
 
-  expect(screen.getByRole('heading', { name: 'Privacy Policy', level: 1 })).toBeInTheDocument()
-  expect(screen.getAllByRole('heading', { level: 2 })[0]).toHaveTextContent('Data Collection')
+  expect(
+    screen.getByRole('heading', { name: 'Privacy Policy', level: 1 })
+  ).toBeInTheDocument()
+  expect(screen.getAllByRole('heading', { level: 2 })[0]).toHaveTextContent(
+    'Data Collection'
+  )
 
   const emailLink = container.querySelector('a[href="mailto:privacy@vibe.dev"]')
   expect(emailLink).not.toBeNull()

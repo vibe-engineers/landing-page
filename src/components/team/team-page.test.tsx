@@ -18,7 +18,13 @@ vi.mock('@/components/common/motion-section', () => ({
 vi.mock('framer-motion', () => {
   const TeamCardMock = React.forwardRef<HTMLDivElement, any>(
     (
-      { children, initial: _initial, animate: _animate, transition: _transition, ...props },
+      {
+        children,
+        initial: _initial,
+        animate: _animate,
+        transition: _transition,
+        ...props
+      },
       ref
     ) => (
       // eslint-disable-next-line @next/next/no-img-element
@@ -94,12 +100,18 @@ function ignoresNonTouchPointerInteractions() {
 }
 
 describe('TeamPage', () => {
-  test('renders all team members with their roles', rendersAllTeamMembersWithTheirRoles)
+  test(
+    'renders all team members with their roles',
+    rendersAllTeamMembersWithTheirRoles
+  )
 
   test(
     'toggles the active member when tapped on touch devices',
     togglesTheActiveMemberWhenTappedOnTouchDevices
   )
 
-  test('ignores non-touch pointer interactions', ignoresNonTouchPointerInteractions)
+  test(
+    'ignores non-touch pointer interactions',
+    ignoresNonTouchPointerInteractions
+  )
 })

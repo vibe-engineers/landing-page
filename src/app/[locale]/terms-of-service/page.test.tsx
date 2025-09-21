@@ -64,7 +64,9 @@ async function rendersTranslatedSectionsAndMetadata() {
 
   expect(screen.getByTestId('header')).toBeInTheDocument()
   expect(screen.getByTestId('footer')).toBeInTheDocument()
-  expect(screen.getByRole('heading', { name: 'Terms of Service', level: 1 })).toBeInTheDocument()
+  expect(
+    screen.getByRole('heading', { name: 'Terms of Service', level: 1 })
+  ).toBeInTheDocument()
 
   const sectionHeadings = screen.getAllByRole('heading', { level: 2 })
   expect(sectionHeadings).toHaveLength(1)
@@ -78,5 +80,8 @@ async function rendersTranslatedSectionsAndMetadata() {
 }
 
 describe('Terms of Service page', () => {
-  test('renders translated sections and metadata', rendersTranslatedSectionsAndMetadata)
+  test(
+    'renders translated sections and metadata',
+    rendersTranslatedSectionsAndMetadata
+  )
 })

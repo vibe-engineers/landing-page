@@ -68,7 +68,10 @@ function exportsMetadataAndViewportConfiguration() {
     { media: '(prefers-color-scheme: light)', color: '#f5f5f5' },
     { media: '(prefers-color-scheme: dark)', color: '#09090b' },
   ])
-  expect(interMock).toHaveBeenCalledWith({ subsets: ['latin'], variable: '--font-inter' })
+  expect(interMock).toHaveBeenCalledWith({
+    subsets: ['latin'],
+    variable: '--font-inter',
+  })
 }
 
 /**
@@ -99,7 +102,10 @@ async function wrapsTheAppWithInternationalizationAndThemingProviders() {
 
   const intlProvider = doc.querySelector('[data-testid="next-intl-provider"]')
   expect(intlProvider).not.toBeNull()
-  expect(nextIntlProps[0]).toMatchObject({ locale: 'en', messages: { greeting: 'hello' } })
+  expect(nextIntlProps[0]).toMatchObject({
+    locale: 'en',
+    messages: { greeting: 'hello' },
+  })
 
   const themeProvider = doc.querySelector('[data-testid="theme-provider"]')
   expect(themeProvider).not.toBeNull()
@@ -116,9 +122,15 @@ async function wrapsTheAppWithInternationalizationAndThemingProviders() {
 describe('Root layout', () => {
   beforeEach(resetLayoutMocks)
 
-  test('exports metadata and viewport configuration', exportsMetadataAndViewportConfiguration)
+  test(
+    'exports metadata and viewport configuration',
+    exportsMetadataAndViewportConfiguration
+  )
 
-  test('generates static params for the supported locales', generatesStaticParamsForTheSupportedLocales)
+  test(
+    'generates static params for the supported locales',
+    generatesStaticParamsForTheSupportedLocales
+  )
 
   test(
     'wraps the app with internationalization and theming providers',

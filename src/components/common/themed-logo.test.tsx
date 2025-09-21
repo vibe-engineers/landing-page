@@ -82,7 +82,10 @@ describe('ThemedLogo', () => {
     switchesToTheDarkLogoWhenTheThemeResolvesToDark
   )
 
-  test('uses the light logo when the theme is light', usesTheLightLogoWhenTheThemeIsLight)
+  test(
+    'uses the light logo when the theme is light',
+    usesTheLightLogoWhenTheThemeIsLight
+  )
 
   test(
     'falls back to an empty source when no logos are provided',

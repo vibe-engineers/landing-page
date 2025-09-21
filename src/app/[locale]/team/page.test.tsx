@@ -44,7 +44,9 @@ import TeamPageRoute from '@/app/[locale]/team/page'
  */
 async function fetchesTranslationsAndRendersTheTeamPage() {
   teamPageProps.length = 0
-  const element = await TeamPageRoute({ params: Promise.resolve({ locale: 'zh' }) })
+  const element = await TeamPageRoute({
+    params: Promise.resolve({ locale: 'zh' }),
+  })
   render(element)
 
   expect(getTranslationsMock).toHaveBeenCalledWith({
@@ -63,5 +65,8 @@ async function fetchesTranslationsAndRendersTheTeamPage() {
 }
 
 describe('Team page route', () => {
-  test('fetches translations and renders the team page', fetchesTranslationsAndRendersTheTeamPage)
+  test(
+    'fetches translations and renders the team page',
+    fetchesTranslationsAndRendersTheTeamPage
+  )
 })

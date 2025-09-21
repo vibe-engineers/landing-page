@@ -66,7 +66,7 @@ export default function Header() {
    * @param event - The anchor click event triggered from the sheet menu.
    */
   function handleMobileNavigationClick(
-    event: ReactMouseEvent<HTMLAnchorElement>,
+    event: ReactMouseEvent<HTMLAnchorElement>
   ) {
     scrollToSection(event)
     setIsMenuOpen(false)

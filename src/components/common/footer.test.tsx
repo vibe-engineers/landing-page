@@ -22,9 +22,8 @@ vi.mock('next-intl', () => ({
 }))
 
 vi.mock('@/lib/utils', async () => {
-  const actual = await vi.importActual<typeof import('@/lib/utils')>(
-    '@/lib/utils'
-  )
+  const actual =
+    await vi.importActual<typeof import('@/lib/utils')>('@/lib/utils')
 
   return {
     ...actual,
@@ -47,19 +46,23 @@ function rendersNavigationSectionsAndSocialLinks() {
 
   expect(screen.getByTestId('themed-logo')).toBeInTheDocument()
 
-  const aboutSection = screen.getByRole('heading', { name: 'footer.nav.about.title' })
+  const aboutSection = screen.getByRole('heading', {
+    name: 'footer.nav.about.title',
+  })
   const contributeSection = screen.getByRole('heading', {
     name: 'footer.nav.contribute.title',
   })
-  const legalSection = screen.getByRole('heading', { name: 'footer.nav.legal.title' })
+  const legalSection = screen.getByRole('heading', {
+    name: 'footer.nav.legal.title',
+  })
 
   expect(aboutSection).toBeInTheDocument()
   expect(contributeSection).toBeInTheDocument()
   expect(legalSection).toBeInTheDocument()
 
-  const aboutLinks = within(aboutSection.parentElement as HTMLElement).getAllByRole(
-    'link'
-  )
+  const aboutLinks = within(
+    aboutSection.parentElement as HTMLElement
+  ).getAllByRole('link')
   expect(aboutLinks.map((link) => link.getAttribute('href'))).toEqual([
     '/team',
     'https://github.com/sponsors/vibe-engineers',
@@ -76,7 +79,9 @@ function rendersNavigationSectionsAndSocialLinks() {
   expect(screen.getByLabelText('Discord')).toBeInTheDocument()
 
   const year = new Date().getFullYear()
-  expect(screen.getByText(`© ${year} siteConfig.name. footer.rights`)).toBeInTheDocument()
+  expect(
+    screen.getByText(`© ${year} siteConfig.name. footer.rights`)
+  ).toBeInTheDocument()
 }
 
 /**
@@ -95,7 +100,10 @@ function invokesScrollToSectionWhenBrandLinkIsClicked() {
 describe('Footer', () => {
   beforeEach(resetScrollToSectionMock)
 
-  test('renders navigation sections and social links', rendersNavigationSectionsAndSocialLinks)
+  test(
+    'renders navigation sections and social links',
+    rendersNavigationSectionsAndSocialLinks
+  )
 
   test(
     'invokes scrollToSection when brand link is clicked',

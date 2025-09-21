@@ -80,7 +80,10 @@ function rendersAllLandingPageSections() {
 describe('Home page', () => {
   beforeEach(resetMotionSectionSpy)
 
-  test('defines static params for supported locales', definesStaticParamsForSupportedLocales)
+  test(
+    'defines static params for supported locales',
+    definesStaticParamsForSupportedLocales
+  )
 
   test('renders all landing page sections', rendersAllLandingPageSections)
 })

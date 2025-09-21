@@ -91,5 +91,8 @@ describe('MotionSection', () => {
     animatesIntoViewWhenTheSectionBecomesVisible
   )
 
-  test('keeps the section hidden until it is in view', keepsTheSectionHiddenUntilItIsInView)
+  test(
+    'keeps the section hidden until it is in view',
+    keepsTheSectionHiddenUntilItIsInView
+  )
 })

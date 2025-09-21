@@ -31,4 +31,7 @@ function rendersConfettiBackgroundWithPieces() {
   })
 }
 
-test('renders confetti background with pieces', rendersConfettiBackgroundWithPieces)
+test(
+  'renders confetti background with pieces',
+  rendersConfettiBackgroundWithPieces
+)
