@@ -25,6 +25,11 @@ import {
 } from '@/components/common/ui/accordion'
 import { useToast } from '@/hooks/use-toast'
 
+/**
+ * Displays the site header with navigation, language selection, and theming controls.
+ *
+ * @returns The sticky header element rendered at the top of the viewport.
+ */
 export default function Header() {
   const t = useTranslations()
   const locale = useLocale()
@@ -43,6 +48,11 @@ export default function Header() {
     { locale: 'zh', label: t('language.zh'), icon: '🇨🇳' },
   ]
 
+  /**
+   * Shows toast feedback when a user chooses a different language.
+   *
+   * @param lang - The selected language option.
+   */
   function handleLanguageSwitch(lang: (typeof languageOptions)[number]) {
     toast({
       title: t('language.toast.title'),
@@ -50,6 +60,11 @@ export default function Header() {
     })
   }
 
+  /**
+   * Handles closing the mobile menu after navigating to a section.
+   *
+   * @param event - The anchor click event triggered from the sheet menu.
+   */
   function handleMobileNavigationClick(
     event: ReactMouseEvent<HTMLAnchorElement>,
   ) {

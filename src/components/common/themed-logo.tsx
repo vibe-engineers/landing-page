@@ -9,6 +9,12 @@ type LogoProps = Omit<ImageProps, 'src'> & {
   lightSrc?: string
 }
 
+/**
+ * Chooses between light and dark logo sources based on the resolved theme.
+ *
+ * @param props - The logo image props including theme-specific sources.
+ * @returns A Next.js image element for the appropriate theme.
+ */
 export function ThemedLogo({ darkSrc, lightSrc, alt, ...props }: LogoProps) {
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)

@@ -9,9 +9,9 @@ vi.mock('next-intl', () => ({
 }))
 
 vi.mock('next/image', () => ({
-  default: (props: any) => {
+  default: ({ alt = '', ...rest }: any) => {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} />
+    return <img alt={alt} {...rest} />
   },
 }))
 
@@ -19,7 +19,10 @@ vi.mock('@/navigation', () => ({
   Link: (props: any) => <a {...props} />,
 }))
 
-test('renders call to action with title, subcopy, and buttons', () => {
+/**
+ * Checks that the call-to-action renders translated messaging and buttons.
+ */
+function rendersCallToActionWithTitleSubcopyAndButtons() {
   render(<CallToAction />)
 
   expect(screen.getByText('callToAction.title')).toBeInTheDocument()
@@ -28,4 +31,9 @@ test('renders call to action with title, subcopy, and buttons', () => {
   expect(screen.getByText('hero.secondaryCta')).toBeInTheDocument()
   expect(screen.getByText('notice.title')).toBeInTheDocument()
   expect(screen.getByText('notice.description')).toBeInTheDocument()
-})
+}
+
+test(
+  'renders call to action with title, subcopy, and buttons',
+  rendersCallToActionWithTitleSubcopyAndButtons
+)

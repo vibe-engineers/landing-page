@@ -13,6 +13,11 @@ import { Link } from '@/navigation'
 import { useTranslations } from 'next-intl'
 import { ThemedLogo } from '@/components/common/themed-logo'
 
+/**
+ * Showcases a curated selection of tools with descriptions and resource links.
+ *
+ * @returns The tools grid section of the landing page.
+ */
 export default function ToolsGrid() {
   const t = useTranslations('tools')
   const displayedTools = tools.filter((tool) =>

@@ -5,7 +5,10 @@ import { ConfettiBackground } from '@/components/landing/confetti'
 
 vi.spyOn(Math, 'random').mockReturnValue(0.5)
 
-test('renders confetti background with pieces', () => {
+/**
+ * Ensures the confetti background renders the expected number of uniformly styled pieces.
+ */
+function rendersConfettiBackgroundWithPieces() {
   const { container } = render(<ConfettiBackground />)
 
   const confettiPieces = container.querySelectorAll(
@@ -26,4 +29,6 @@ test('renders confetti background with pieces', () => {
       '--y': '0px',
     })
   })
-})
+}
+
+test('renders confetti background with pieces', rendersConfettiBackgroundWithPieces)

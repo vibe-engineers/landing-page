@@ -13,11 +13,22 @@ import { Button } from '../common/ui/button'
 import { useToast } from '@/hooks/use-toast'
 import { useTranslations } from 'next-intl'
 
+/**
+ * Presents copyable code samples for the landing page product suite.
+ *
+ * @returns The code examples section containing tabbed snippets.
+ */
 export default function CodeExamples() {
   const t = useTranslations('codeExamples')
   const { toast } = useToast()
   const [copied, setCopied] = useState<Record<string, boolean>>({})
 
+  /**
+   * Copies the provided code sample to the clipboard and shows success feedback.
+   *
+   * @param key - The identifier for the example being copied.
+   * @param text - The code to copy to the clipboard.
+   */
   const handleCopy = (key: string, text: string) => {
     navigator.clipboard.writeText(text)
     setCopied({ ...copied, [key]: true })

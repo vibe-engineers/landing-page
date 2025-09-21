@@ -27,6 +27,11 @@ const actionTypes = {
 
 let count = 0
 
+/**
+ * Generates a unique identifier for a toast entry, wrapping when the maximum safe integer is reached.
+ *
+ * @returns A string representation of the generated identifier.
+ */
 function genId() {
   count = (count + 1) % Number.MAX_SAFE_INTEGER
   return count.toString()
@@ -58,6 +63,11 @@ interface State {
 
 const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>()
 
+/**
+ * Schedules a toast for removal after the configured delay.
+ *
+ * @param toastId - The identifier of the toast to remove.
+ */
 const addToRemoveQueue = (toastId: string) => {
   if (toastTimeouts.has(toastId)) {
     return
@@ -74,6 +84,13 @@ const addToRemoveQueue = (toastId: string) => {
   toastTimeouts.set(toastId, timeout)
 }
 
+/**
+ * Reducer that manages the lifecycle of toast notifications.
+ *
+ * @param state - The current toast state.
+ * @param action - The dispatched action that mutates the state.
+ * @returns The updated state based on the action.
+ */
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case 'ADD_TOAST':
@@ -133,6 +150,11 @@ const listeners: Array<(state: State) => void> = []
 
 let memoryState: State = { toasts: [] }
 
+/**
+ * Broadcasts an action to the reducer and notifies subscribers of state changes.
+ *
+ * @param action - The toast action to dispatch.
+ */
 function dispatch(action: Action) {
   memoryState = reducer(memoryState, action)
   listeners.forEach((listener) => {
@@ -142,14 +164,29 @@ function dispatch(action: Action) {
 
 type Toast = Omit<ToasterToast, 'id'>
 
+/**
+ * Creates a new toast and returns helpers to update or dismiss it.
+ *
+ * @param props - The toast configuration without an identifier.
+ * @returns Helpers to update or dismiss the toast.
+ */
 function toast({ ...props }: Toast) {
   const id = genId()
 
+  /**
+   * Applies partial updates to the toast referenced by this helper.
+   *
+   * @param props - The properties to merge into the toast.
+   */
   const update = (props: ToasterToast) =>
     dispatch({
       type: 'UPDATE_TOAST',
       toast: { ...props, id },
     })
+
+  /**
+   * Dismisses the toast associated with this helper.
+   */
   const dismiss = () => dispatch({ type: 'DISMISS_TOAST', toastId: id })
 
   dispatch({
@@ -171,6 +208,11 @@ function toast({ ...props }: Toast) {
   }
 }
 
+/**
+ * React hook that exposes the current toasts along with helpers to manage them.
+ *
+ * @returns The toast state plus helper methods for showing and dismissing toasts.
+ */
 function useToast() {
   const [state, setState] = React.useState<State>(memoryState)
 

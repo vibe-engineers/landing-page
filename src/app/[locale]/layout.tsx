@@ -42,11 +42,21 @@ export const viewport: Viewport = {
   ],
 }
 
-// Add this function to tell Next.js which locales your app supports
+/**
+ * Informs Next.js about the locales that should be statically generated.
+ *
+ * @returns A list of locale parameter objects.
+ */
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }] // Replace with your actual supported locales
 }
 
+/**
+ * Provides the shared HTML scaffold for all localized routes and wires up providers.
+ *
+ * @param props - The children to render and the promise resolving to locale params.
+ * @returns The rendered HTML document for the given locale.
+ */
 export default async function RootLayout({
   children,
   params,

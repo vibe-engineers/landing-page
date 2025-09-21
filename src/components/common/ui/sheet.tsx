@@ -7,14 +7,29 @@ import { X } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 
+/**
+ * Root sheet component controlling dialog state.
+ */
 const Sheet = SheetPrimitive.Root
 
+/**
+ * Element used to open the sheet dialog.
+ */
 const SheetTrigger = SheetPrimitive.Trigger
 
+/**
+ * Element that closes the sheet dialog when activated.
+ */
 const SheetClose = SheetPrimitive.Close
 
+/**
+ * Portal target where sheet content is rendered.
+ */
 const SheetPortal = SheetPrimitive.Portal
 
+/**
+ * Semi-transparent overlay displayed behind the sheet dialog.
+ */
 const SheetOverlay = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
@@ -30,6 +45,9 @@ const SheetOverlay = React.forwardRef<
 ))
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
 
+/**
+ * Configures positional variants that determine how the sheet animates into view.
+ */
 const sheetVariants = cva(
   'fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
   {
@@ -49,10 +67,16 @@ const sheetVariants = cva(
   }
 )
 
+/**
+ * Props supported by the sheet content component including placement variants.
+ */
 interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
     VariantProps<typeof sheetVariants> {}
 
+/**
+ * Sheet content container that renders the dialog body with animations.
+ */
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps
@@ -74,6 +98,9 @@ const SheetContent = React.forwardRef<
 ))
 SheetContent.displayName = SheetPrimitive.Content.displayName
 
+/**
+ * Wrapper for header content within a sheet dialog.
+ */
 const SheetHeader = ({
   className,
   ...props
@@ -88,6 +115,9 @@ const SheetHeader = ({
 )
 SheetHeader.displayName = 'SheetHeader'
 
+/**
+ * Wrapper that aligns footer actions within the sheet dialog.
+ */
 const SheetFooter = ({
   className,
   ...props
@@ -102,6 +132,9 @@ const SheetFooter = ({
 )
 SheetFooter.displayName = 'SheetFooter'
 
+/**
+ * Styled title element for sheet dialogs.
+ */
 const SheetTitle = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
@@ -114,6 +147,9 @@ const SheetTitle = React.forwardRef<
 ))
 SheetTitle.displayName = SheetPrimitive.Title.displayName
 
+/**
+ * Description text element providing additional context for the sheet.
+ */
 const SheetDescription = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>

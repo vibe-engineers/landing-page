@@ -3,6 +3,12 @@ import Footer from '@/components/common/footer'
 import { getTranslations } from 'next-intl/server'
 import MotionSection from '@/components/common/motion-section'
 
+/**
+ * Renders the localized terms of service page with structured content sections.
+ *
+ * @param props - The locale parameter promise supplied by Next.js routing.
+ * @returns The terms of service layout for the requested locale.
+ */
 export default async function TermsPage({
   params,
 }: {

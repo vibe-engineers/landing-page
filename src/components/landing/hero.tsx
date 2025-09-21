@@ -10,6 +10,11 @@ import { ConfettiBackground } from '@/components/landing/confetti'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 
+/**
+ * Renders the animated hero section with branding, messaging, and CTAs.
+ *
+ * @returns The hero section occupying the top of the landing page.
+ */
 export default function Hero() {
   const t = useTranslations('hero')
   const tSite = useTranslations('siteConfig')

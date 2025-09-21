@@ -8,10 +8,20 @@ import FAQ from '@/components/landing/faq'
 import Footer from '@/components/common/footer'
 import MotionSection from '@/components/common/motion-section'
 
+/**
+ * Generates the static parameters for all supported locales.
+ *
+ * @returns A list of locale parameter objects for Next.js static generation.
+ */
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }]
 }
 
+/**
+ * Renders the localized home page composed of the hero, product sections, and footer.
+ *
+ * @returns The complete landing page layout for a locale.
+ */
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">

@@ -9,7 +9,10 @@ vi.mock('next-themes', () => ({
   ),
 }))
 
-test('renders children', () => {
+/**
+ * Verifies that the wrapper renders its child elements.
+ */
+function rendersChildren() {
   render(
     <ThemeProvider>
       <div>Child</div>
@@ -18,4 +21,6 @@ test('renders children', () => {
 
   expect(screen.getByTestId('next-themes-provider')).toBeInTheDocument()
   expect(screen.getByText('Child')).toBeInTheDocument()
-})
+}
+
+test('renders children', rendersChildren)

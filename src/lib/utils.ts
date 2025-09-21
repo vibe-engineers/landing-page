@@ -2,10 +2,21 @@ import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import type { MouseEvent as ReactMouseEvent } from 'react'
 
+/**
+ * Concatenates and merges Tailwind class names while removing duplicates.
+ *
+ * @param inputs - A list of class name values that can include strings, arrays, or conditionals.
+ * @returns A single Tailwind-safe class string.
+ */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+/**
+ * Handles smooth scrolling to anchor targets and locale-aware home navigation for header/footer links.
+ *
+ * @param event - The anchor click event whose default navigation might be prevented.
+ */
 export function scrollToSection(event: ReactMouseEvent<HTMLAnchorElement>) {
   const href = event.currentTarget.getAttribute('href')
 

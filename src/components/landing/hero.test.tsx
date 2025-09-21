@@ -9,9 +9,9 @@ vi.mock('next-intl', () => ({
 }))
 
 vi.mock('next/image', () => ({
-  default: (props: any) => {
+  default: ({ alt = '', ...rest }: any) => {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} />
+    return <img alt={alt} {...rest} />
   },
 }))
 
@@ -23,7 +23,10 @@ vi.mock('@/components/landing/confetti', () => ({
   ConfettiBackground: () => <div data-testid="confetti" />,
 }))
 
-test('renders hero with title, tagline, subcopy, and buttons', () => {
+/**
+ * Ensures the hero component renders core messaging and actions.
+ */
+function rendersHeroWithTitleTaglineSubcopyAndButtons() {
   render(<Hero />)
 
   expect(screen.getByText('siteConfig.name')).toBeInTheDocument()
@@ -32,4 +35,9 @@ test('renders hero with title, tagline, subcopy, and buttons', () => {
   expect(screen.getByText('hero.primaryCta')).toBeInTheDocument()
   expect(screen.getByText('hero.secondaryCta')).toBeInTheDocument()
   expect(screen.getByTestId('confetti')).toBeInTheDocument()
-})
+}
+
+test(
+  'renders hero with title, tagline, subcopy, and buttons',
+  rendersHeroWithTitleTaglineSubcopyAndButtons
+)

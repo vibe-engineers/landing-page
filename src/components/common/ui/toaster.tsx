@@ -10,6 +10,11 @@ import {
   ToastViewport,
 } from '@/components/common/ui/toast'
 
+/**
+ * Renders the toast provider and displays queued toast notifications.
+ *
+ * @returns The toaster component responsible for rendering toast messages.
+ */
 export function Toaster() {
   const { toasts } = useToast()
 

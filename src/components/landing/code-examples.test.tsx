@@ -36,7 +36,10 @@ Object.defineProperty(navigator, 'clipboard', {
 
 import { waitFor, within } from '@testing-library/react'
 
-test('renders code examples with title, subtitle, and tabs', async () => {
+/**
+ * Validates the code examples section renders localized content and supports copying snippets.
+ */
+async function rendersCodeExamplesWithTitleSubtitleAndTabs() {
   render(<CodeExamples />)
 
   expect(screen.getByText('codeExamples.title')).toBeInTheDocument()
@@ -70,4 +73,9 @@ test('renders code examples with title, subtitle, and tabs', async () => {
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith('viberetry code')
     expect(mockToast).toHaveBeenCalled()
   })
-})
+}
+
+test(
+  'renders code examples with title, subtitle, and tabs',
+  rendersCodeExamplesWithTitleSubtitleAndTabs
+)

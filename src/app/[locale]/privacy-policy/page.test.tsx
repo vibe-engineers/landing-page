@@ -50,23 +50,28 @@ vi.mock('@/components/common/motion-section', () => ({
 
 import PrivacyPage from '@/app/[locale]/privacy-policy/page'
 
-describe('Privacy Policy page', () => {
-  test('renders translated content sections', async () => {
-    const element = await PrivacyPage({ params: Promise.resolve({ locale: 'zh' }) })
-    const { container } = render(element)
+/**
+ * Ensures the privacy policy route fetches translations and renders the expected content.
+ */
+async function rendersTranslatedContentSections() {
+  const element = await PrivacyPage({ params: Promise.resolve({ locale: 'zh' }) })
+  const { container } = render(element)
 
-    expect(getTranslationsMock).toHaveBeenCalledWith({
-      locale: 'zh',
-      namespace: 'privacyPolicy',
-    })
-
-    expect(screen.getByRole('heading', { name: 'Privacy Policy', level: 1 })).toBeInTheDocument()
-    expect(screen.getAllByRole('heading', { level: 2 })[0]).toHaveTextContent('Data Collection')
-
-    const emailLink = container.querySelector('a[href="mailto:privacy@vibe.dev"]')
-    expect(emailLink).not.toBeNull()
-    expect(emailLink).toHaveTextContent('privacy@vibe.dev')
-
-    expect(screen.getByText('Updated on Sep 25, 2024')).toBeInTheDocument()
+  expect(getTranslationsMock).toHaveBeenCalledWith({
+    locale: 'zh',
+    namespace: 'privacyPolicy',
   })
+
+  expect(screen.getByRole('heading', { name: 'Privacy Policy', level: 1 })).toBeInTheDocument()
+  expect(screen.getAllByRole('heading', { level: 2 })[0]).toHaveTextContent('Data Collection')
+
+  const emailLink = container.querySelector('a[href="mailto:privacy@vibe.dev"]')
+  expect(emailLink).not.toBeNull()
+  expect(emailLink).toHaveTextContent('privacy@vibe.dev')
+
+  expect(screen.getByText('Updated on Sep 25, 2024')).toBeInTheDocument()
+}
+
+describe('Privacy Policy page', () => {
+  test('renders translated content sections', rendersTranslatedContentSections)
 })

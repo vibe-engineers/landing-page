@@ -20,6 +20,7 @@ vi.mock('framer-motion', () => {
       )
     }
   )
+  MotionSectionComponent.displayName = 'MotionSectionComponentMock'
 
   return {
     motion: {
@@ -29,48 +30,66 @@ vi.mock('framer-motion', () => {
   }
 })
 
+/**
+ * Resets spies to ensure tests do not leak state.
+ */
+function resetMotionSectionMocks() {
+  useInViewMock.mockReset()
+  motionSectionPropsMock.mockClear()
+}
+
+/**
+ * Verifies the motion section animates when the element becomes visible.
+ */
+function animatesIntoViewWhenTheSectionBecomesVisible() {
+  useInViewMock.mockReturnValue(true)
+
+  render(
+    <MotionSection delay={0.3} id="features">
+      <p>Content</p>
+    </MotionSection>
+  )
+
+  expect(useInViewMock).toHaveBeenCalledWith(expect.any(Object), { once: true })
+
+  expect(motionSectionPropsMock).toHaveBeenCalledWith(
+    expect.objectContaining({
+      id: 'features',
+      initial: { opacity: 0, y: 20 },
+      animate: { opacity: 1, y: 0 },
+      transition: { duration: 0.5, delay: 0.3 },
+    })
+  )
+
+  expect(screen.getByTestId('motion-section')).toBeInTheDocument()
+}
+
+/**
+ * Confirms the section stays hidden until it is in view.
+ */
+function keepsTheSectionHiddenUntilItIsInView() {
+  useInViewMock.mockReturnValue(false)
+
+  render(
+    <MotionSection>
+      <p>Hidden content</p>
+    </MotionSection>
+  )
+
+  expect(motionSectionPropsMock).toHaveBeenCalledWith(
+    expect.objectContaining({
+      animate: { opacity: 0, y: 20 },
+    })
+  )
+}
+
 describe('MotionSection', () => {
-  beforeEach(() => {
-    useInViewMock.mockReset()
-    motionSectionPropsMock.mockClear()
-  })
+  beforeEach(resetMotionSectionMocks)
 
-  test('animates into view when the section becomes visible', () => {
-    useInViewMock.mockReturnValue(true)
+  test(
+    'animates into view when the section becomes visible',
+    animatesIntoViewWhenTheSectionBecomesVisible
+  )
 
-    render(
-      <MotionSection delay={0.3} id="features">
-        <p>Content</p>
-      </MotionSection>
-    )
-
-    expect(useInViewMock).toHaveBeenCalledWith(expect.any(Object), { once: true })
-
-    expect(motionSectionPropsMock).toHaveBeenCalledWith(
-      expect.objectContaining({
-        id: 'features',
-        initial: { opacity: 0, y: 20 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.5, delay: 0.3 },
-      })
-    )
-
-    expect(screen.getByTestId('motion-section')).toBeInTheDocument()
-  })
-
-  test('keeps the section hidden until it is in view', () => {
-    useInViewMock.mockReturnValue(false)
-
-    render(
-      <MotionSection>
-        <p>Hidden content</p>
-      </MotionSection>
-    )
-
-    expect(motionSectionPropsMock).toHaveBeenCalledWith(
-      expect.objectContaining({
-        animate: { opacity: 0, y: 20 },
-      })
-    )
-  })
+  test('keeps the section hidden until it is in view', keepsTheSectionHiddenUntilItIsInView)
 })

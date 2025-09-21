@@ -1,3 +1,30 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"]
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": ["jsdoc"],
+  "settings": {
+    "jsdoc": {
+      "mode": "typescript"
+    }
+  },
+  "rules": {
+    "jsdoc/require-jsdoc": [
+      "error",
+      {
+        "publicOnly": false,
+        "contexts": [
+          "FunctionDeclaration",
+          "ClassDeclaration",
+          "MethodDefinition",
+          "VariableDeclaration[declarations.0.id.type='Identifier'] > ArrowFunctionExpression",
+          "ExportDefaultDeclaration > ArrowFunctionExpression"
+        ],
+        "require": {
+          "ArrowFunctionExpression": false,
+          "FunctionDeclaration": true,
+          "ClassDeclaration": true,
+          "MethodDefinition": true
+        }
+      }
+    ]
+  }
 }

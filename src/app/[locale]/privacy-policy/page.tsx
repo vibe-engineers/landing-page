@@ -3,6 +3,12 @@ import Footer from '@/components/common/footer'
 import { getTranslations } from 'next-intl/server'
 import MotionSection from '@/components/common/motion-section'
 
+/**
+ * Renders the privacy policy page with localized content sections.
+ *
+ * @param props - The locale parameter promise provided by Next.js routing.
+ * @returns The privacy policy layout for the requested locale.
+ */
 export default async function PrivacyPage({
   params,
 }: {

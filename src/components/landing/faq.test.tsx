@@ -14,7 +14,10 @@ vi.mock('@/lib/content', () => ({
 
 import { fireEvent } from '@testing-library/react'
 
-test('renders FAQ with title, subtitle, and accordion', () => {
+/**
+ * Ensures the FAQ renders localized questions and reveals answers on interaction.
+ */
+function rendersFaqWithTitleSubtitleAndAccordion() {
   render(<FAQ />)
 
   expect(screen.getByText('faq.title')).toBeInTheDocument()
@@ -33,4 +36,9 @@ test('renders FAQ with title, subtitle, and accordion', () => {
   // Click on the second question to reveal the answer
   fireEvent.click(screen.getByText('faq.q2.question'))
   expect(screen.getByText('faq.q2.answer')).toBeInTheDocument()
-})
+}
+
+test(
+  'renders FAQ with title, subtitle, and accordion',
+  rendersFaqWithTitleSubtitleAndAccordion
+)
