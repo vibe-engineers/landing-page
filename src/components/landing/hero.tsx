@@ -43,7 +43,15 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex h-[calc(100vh-56px)] flex-col items-center justify-center pt-16 pb-20 md:pt-24 md:pb-32"
+      className="
+        relative flex
+        min-h-[calc(100vh-56px)]
+        supports-[height:100dvh]:min-h-[calc(100dvh-56px)]
+        flex-col items-center justify-center
+        pt-2 sm:pt-10 md:pt-24
+        supports-[padding:max(0px)]:pt-[max(2rem,env(safe-area-inset-top))]
+        pb-16 md:pb-32
+      "
     >
       <div
         aria-hidden="true"
