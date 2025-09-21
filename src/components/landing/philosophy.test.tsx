@@ -23,7 +23,10 @@ vi.mock('@/lib/content', () => ({
   },
 }))
 
-test('renders philosophy with title, subtitle, principles, and quote', () => {
+/**
+ * Verifies the philosophy section renders localized principles and the featured quote.
+ */
+function rendersPhilosophyWithTitleSubtitlePrinciplesAndQuote() {
   render(<Philosophy />)
 
   expect(screen.getByText('philosophy.title')).toBeInTheDocument()
@@ -42,4 +45,9 @@ test('renders philosophy with title, subtitle, principles, and quote', () => {
   ).toBeInTheDocument()
   expect(screen.getByText('"philosophy.quote"')).toBeInTheDocument()
   expect(screen.getByText('— philosophy.quoteAuthor')).toBeInTheDocument()
-})
+}
+
+test(
+  'renders philosophy with title, subtitle, principles, and quote',
+  rendersPhilosophyWithTitleSubtitlePrinciplesAndQuote
+)

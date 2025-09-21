@@ -8,6 +8,11 @@ import {
 } from '@/components/common/ui/card'
 import { useTranslations } from 'next-intl'
 
+/**
+ * Highlights the guiding principles behind the product philosophy.
+ *
+ * @returns The philosophy section containing principle cards and a quote.
+ */
 export default function Philosophy() {
   const t = useTranslations('philosophy')
   return (

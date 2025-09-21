@@ -12,15 +12,25 @@ vi.mock('next-themes', () => ({
   }),
 }))
 
-test('renders toggle button', () => {
+/**
+ * Validates that the toggle renders with an accessible button.
+ */
+function rendersToggleButton() {
   render(<ThemeToggle />)
   expect(
     screen.getByRole('button', { name: 'Toggle theme' })
   ).toBeInTheDocument()
-})
+}
 
-test('calls setTheme on click', () => {
+/**
+ * Confirms the toggle invokes the setTheme callback.
+ */
+function callsSetThemeOnClick() {
   render(<ThemeToggle />)
   fireEvent.click(screen.getByRole('button', { name: 'Toggle theme' }))
   expect(mockSetTheme).toHaveBeenCalledWith('dark')
-})
+}
+
+test('renders toggle button', rendersToggleButton)
+
+test('calls setTheme on click', callsSetThemeOnClick)

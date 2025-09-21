@@ -8,6 +8,11 @@ import {
 import { faqContent } from '@/lib/content'
 import { useTranslations } from 'next-intl'
 
+/**
+ * Renders the frequently asked questions section using localized copy.
+ *
+ * @returns The FAQ section of the landing page.
+ */
 export default function FAQ() {
   const t = useTranslations('faq')
   return (

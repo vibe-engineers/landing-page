@@ -43,29 +43,44 @@ vi.mock('@/components/common/motion-section', () => ({
 
 import Home, { generateStaticParams } from '@/app/[locale]/page'
 
+/**
+ * Clears motion section spy state between tests.
+ */
+function resetMotionSectionSpy() {
+  motionSectionMock.mockClear()
+}
+
+/**
+ * Ensures static parameters are generated for each supported locale.
+ */
+function definesStaticParamsForSupportedLocales() {
+  expect(generateStaticParams()).toEqual([{ locale: 'en' }, { locale: 'zh' }])
+}
+
+/**
+ * Verifies the home page renders all major landing sections.
+ */
+function rendersAllLandingPageSections() {
+  render(<Home />)
+
+  expect(screen.getByTestId('header')).toBeInTheDocument()
+  expect(screen.getByTestId('footer')).toBeInTheDocument()
+
+  expect(screen.getByTestId('hero')).toBeInTheDocument()
+  expect(screen.getByTestId('tools-grid')).toBeInTheDocument()
+  expect(screen.getByTestId('philosophy')).toBeInTheDocument()
+  expect(screen.getByTestId('code-examples')).toBeInTheDocument()
+  expect(screen.getByTestId('faq')).toBeInTheDocument()
+  expect(screen.getByTestId('cta')).toBeInTheDocument()
+
+  expect(screen.getAllByTestId('motion-section')).toHaveLength(6)
+  expect(motionSectionMock).toHaveBeenCalledTimes(6)
+}
+
 describe('Home page', () => {
-  beforeEach(() => {
-    motionSectionMock.mockClear()
-  })
+  beforeEach(resetMotionSectionSpy)
 
-  test('defines static params for supported locales', () => {
-    expect(generateStaticParams()).toEqual([{ locale: 'en' }, { locale: 'zh' }])
-  })
+  test('defines static params for supported locales', definesStaticParamsForSupportedLocales)
 
-  test('renders all landing page sections', () => {
-    render(<Home />)
-
-    expect(screen.getByTestId('header')).toBeInTheDocument()
-    expect(screen.getByTestId('footer')).toBeInTheDocument()
-
-    expect(screen.getByTestId('hero')).toBeInTheDocument()
-    expect(screen.getByTestId('tools-grid')).toBeInTheDocument()
-    expect(screen.getByTestId('philosophy')).toBeInTheDocument()
-    expect(screen.getByTestId('code-examples')).toBeInTheDocument()
-    expect(screen.getByTestId('faq')).toBeInTheDocument()
-    expect(screen.getByTestId('cta')).toBeInTheDocument()
-
-    expect(screen.getAllByTestId('motion-section')).toHaveLength(6)
-    expect(motionSectionMock).toHaveBeenCalledTimes(6)
-  })
+  test('renders all landing page sections', rendersAllLandingPageSections)
 })

@@ -6,9 +6,17 @@ import { useTheme } from 'next-themes'
 
 import { Button } from '@/components/common/ui/button'
 
+/**
+ * Renders a button that toggles between the light and dark themes.
+ *
+ * @returns The theme toggle icon button.
+ */
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
 
+  /**
+   * Switches the active theme between light and dark modes.
+   */
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light')
   }

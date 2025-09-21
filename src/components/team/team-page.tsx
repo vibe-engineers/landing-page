@@ -7,16 +7,31 @@ import { teamMembers } from '@/lib/team'
 import MotionSection from '@/components/common/motion-section'
 import { cn } from '@/lib/utils'
 
+/**
+ * Props supplied to the team page component.
+ */
 interface TeamPageProps {
   title: string
   subtitle: string
 }
 
+/**
+ * Renders the team page highlighting members with animated portraits.
+ *
+ * @param props - The localized title and subtitle for the page.
+ * @returns The team showcase section.
+ */
 const TeamPage: FC<TeamPageProps> = ({ title, subtitle }) => {
   const [activeMemberIndex, setActiveMemberIndex] = useState<number | null>(
     null
   )
 
+  /**
+   * Toggles the active member when interacting via touch or pen input.
+   *
+   * @param index - The index of the team member being interacted with.
+   * @returns A pointer event handler that toggles the member state.
+   */
   const handleTouchToggle = useCallback(
     (index: number) => (event: PointerEvent<HTMLDivElement>) => {
       if (event.pointerType !== 'touch' && event.pointerType !== 'pen') {

@@ -40,7 +40,10 @@ vi.mock('@/navigation', () => ({
   Link: (props: any) => <a {...props} />,
 }))
 
-test('renders tools grid with title, subtitle, and tools', () => {
+/**
+ * Confirms the tools grid displays localized headings and tool cards.
+ */
+function rendersToolsGridWithTitleSubtitleAndTools() {
   render(<ToolsGrid />)
 
   expect(screen.getByText('tools.title')).toBeInTheDocument()
@@ -49,4 +52,9 @@ test('renders tools grid with title, subtitle, and tools', () => {
   expect(screen.getByText('tools.viberetry.name')).toBeInTheDocument()
   expect(screen.getByText('tools.vibegen.name')).toBeInTheDocument()
   expect(screen.getByText('tools.more')).toBeInTheDocument()
-})
+}
+
+test(
+  'renders tools grid with title, subtitle, and tools',
+  rendersToolsGridWithTitleSubtitleAndTools
+)

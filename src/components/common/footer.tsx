@@ -32,6 +32,11 @@ const footerNav = {
   },
 }
 
+/**
+ * Renders the global footer with navigation links, social buttons, and branding.
+ *
+ * @returns The footer element for the site.
+ */
 export default function Footer() {
   const t = useTranslations()
 

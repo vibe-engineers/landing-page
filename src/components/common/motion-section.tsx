@@ -9,6 +9,12 @@ interface MotionSectionProps {
   id?: string
 }
 
+/**
+ * Animates content into view with a fade and slide effect once it enters the viewport.
+ *
+ * @param props - The section configuration including children, delay, and optional id.
+ * @returns An animated motion section element.
+ */
 const MotionSection: FC<MotionSectionProps> = ({
   children,
   delay = 0.15,

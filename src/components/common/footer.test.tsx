@@ -32,55 +32,73 @@ vi.mock('@/lib/utils', async () => {
   }
 })
 
+/**
+ * Clears the scroll handler mock so each test starts cleanly.
+ */
+function resetScrollToSectionMock() {
+  scrollToSectionMock.mockClear()
+}
+
+/**
+ * Validates that the footer renders its navigation sections and social links.
+ */
+function rendersNavigationSectionsAndSocialLinks() {
+  render(<Footer />)
+
+  expect(screen.getByTestId('themed-logo')).toBeInTheDocument()
+
+  const aboutSection = screen.getByRole('heading', { name: 'footer.nav.about.title' })
+  const contributeSection = screen.getByRole('heading', {
+    name: 'footer.nav.contribute.title',
+  })
+  const legalSection = screen.getByRole('heading', { name: 'footer.nav.legal.title' })
+
+  expect(aboutSection).toBeInTheDocument()
+  expect(contributeSection).toBeInTheDocument()
+  expect(legalSection).toBeInTheDocument()
+
+  const aboutLinks = within(aboutSection.parentElement as HTMLElement).getAllByRole(
+    'link'
+  )
+  expect(aboutLinks.map((link) => link.getAttribute('href'))).toEqual([
+    '/team',
+    'https://github.com/sponsors/vibe-engineers',
+  ])
+
+  expect(
+    screen.getByRole('link', { name: 'footer.nav.contribute.links.sponsor' })
+  ).toHaveAttribute('href', 'https://github.com/sponsors/vibe-engineers')
+  expect(
+    screen.getByRole('link', { name: 'footer.nav.legal.links.privacy' })
+  ).toHaveAttribute('href', '/privacy-policy')
+
+  expect(screen.getByLabelText('GitHub')).toBeInTheDocument()
+  expect(screen.getByLabelText('Discord')).toBeInTheDocument()
+
+  const year = new Date().getFullYear()
+  expect(screen.getByText(`© ${year} siteConfig.name. footer.rights`)).toBeInTheDocument()
+}
+
+/**
+ * Ensures the footer brand link triggers the smooth scroll helper.
+ */
+function invokesScrollToSectionWhenBrandLinkIsClicked() {
+  render(<Footer />)
+
+  const brandLink = screen.getByRole('link', { name: /siteConfig.name/ })
+
+  fireEvent.click(brandLink)
+
+  expect(scrollToSectionMock).toHaveBeenCalledTimes(1)
+}
+
 describe('Footer', () => {
-  beforeEach(() => {
-    scrollToSectionMock.mockClear()
-  })
+  beforeEach(resetScrollToSectionMock)
 
-  test('renders navigation sections and social links', () => {
-    render(<Footer />)
+  test('renders navigation sections and social links', rendersNavigationSectionsAndSocialLinks)
 
-    expect(screen.getByTestId('themed-logo')).toBeInTheDocument()
-
-    const aboutSection = screen.getByRole('heading', { name: 'footer.nav.about.title' })
-    const contributeSection = screen.getByRole('heading', {
-      name: 'footer.nav.contribute.title',
-    })
-    const legalSection = screen.getByRole('heading', { name: 'footer.nav.legal.title' })
-
-    expect(aboutSection).toBeInTheDocument()
-    expect(contributeSection).toBeInTheDocument()
-    expect(legalSection).toBeInTheDocument()
-
-    const aboutLinks = within(aboutSection.parentElement as HTMLElement).getAllByRole(
-      'link'
-    )
-    expect(aboutLinks.map((link) => link.getAttribute('href'))).toEqual([
-      '/team',
-      'https://github.com/sponsors/vibe-engineers',
-    ])
-
-    expect(
-      screen.getByRole('link', { name: 'footer.nav.contribute.links.sponsor' })
-    ).toHaveAttribute('href', 'https://github.com/sponsors/vibe-engineers')
-    expect(
-      screen.getByRole('link', { name: 'footer.nav.legal.links.privacy' })
-    ).toHaveAttribute('href', '/privacy-policy')
-
-    expect(screen.getByLabelText('GitHub')).toBeInTheDocument()
-    expect(screen.getByLabelText('Discord')).toBeInTheDocument()
-
-    const year = new Date().getFullYear()
-    expect(screen.getByText(`© ${year} siteConfig.name. footer.rights`)).toBeInTheDocument()
-  })
-
-  test('invokes scrollToSection when brand link is clicked', () => {
-    render(<Footer />)
-
-    const brandLink = screen.getByRole('link', { name: /siteConfig.name/ })
-
-    fireEvent.click(brandLink)
-
-    expect(scrollToSectionMock).toHaveBeenCalledTimes(1)
-  })
+  test(
+    'invokes scrollToSection when brand link is clicked',
+    invokesScrollToSectionWhenBrandLinkIsClicked
+  )
 })

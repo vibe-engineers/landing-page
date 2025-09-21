@@ -13,6 +13,11 @@ import {
 import { AlertTriangle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
+/**
+ * Displays the call-to-action section with primary and secondary links and a notice banner.
+ *
+ * @returns The call-to-action section of the landing page.
+ */
 export default function CallToAction() {
   const t = useTranslations('callToAction')
   const tHero = useTranslations('hero')

@@ -4,9 +4,9 @@ import { expect, test, vi } from 'vitest'
 import Header from '@/components/common/header'
 
 vi.mock('next/image', () => ({
-  default: (props: any) => {
+  default: ({ alt = '', ...rest }: any) => {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} />
+    return <img alt={alt} {...rest} />
   },
 }))
 
@@ -33,7 +33,10 @@ vi.mock('@/hooks/use-toast', () => ({
   }),
 }))
 
-test('renders header with navigation and theme toggle', () => {
+/**
+ * Ensures the header renders navigation links and social actions.
+ */
+function rendersHeaderWithNavigationAndThemeToggle() {
   render(<Header />)
 
   expect(screen.getByAltText('Vibe Engineers Logo')).toBeInTheDocument()
@@ -45,4 +48,9 @@ test('renders header with navigation and theme toggle', () => {
   expect(screen.getByLabelText('Discord')).toBeInTheDocument()
   // The theme toggle button does not have a name, so we can't search it by name
   // expect(screen.getByRole('button', { name: 'Toggle theme' })).toBeInTheDocument()
-})
+}
+
+test(
+  'renders header with navigation and theme toggle',
+  rendersHeaderWithNavigationAndThemeToggle
+)

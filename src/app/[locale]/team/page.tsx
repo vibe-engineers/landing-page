@@ -3,6 +3,12 @@ import Footer from '@/components/common/footer'
 import TeamPage from '@/components/team/team-page'
 import { getTranslations } from 'next-intl/server'
 
+/**
+ * Renders the localized team page with translated headings.
+ *
+ * @param props - The locale parameter promise supplied by Next.js routing.
+ * @returns The team page layout for the requested locale.
+ */
 export default async function Team({
   params,
 }: {

@@ -2,6 +2,9 @@
 
 import { useEffect, useState, type CSSProperties } from 'react'
 
+/**
+ * Represents a single animated confetti piece rendered in the background.
+ */
 interface Piece {
   left: number
   top: number
@@ -14,6 +17,11 @@ interface Piece {
   y: number
 }
 
+/**
+ * Renders animated confetti squares used as a decorative background.
+ *
+ * @returns A positioned container with animated confetti spans.
+ */
 export function ConfettiBackground() {
   const [pieces, setPieces] = useState<Piece[]>([])
 

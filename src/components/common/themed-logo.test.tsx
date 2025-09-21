@@ -4,9 +4,9 @@ import { beforeEach, describe, expect, test, vi } from 'vitest'
 import { ThemedLogo } from '@/components/common/themed-logo'
 
 vi.mock('next/image', () => ({
-  default: (props: any) => {
+  default: ({ alt = '', ...rest }: any) => {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} />
+    return <img alt={alt} {...rest} />
   },
 }))
 
@@ -18,48 +18,74 @@ vi.mock('next-themes', () => ({
   useTheme: () => useThemeMock(),
 }))
 
+/**
+ * Restores the theme mock to default dark mode before each test.
+ */
+function resetThemeMock() {
+  useThemeMock.mockReturnValue({ resolvedTheme: 'dark' })
+}
+
+/**
+ * Confirms the dark logo renders when the theme resolves to dark.
+ */
+async function switchesToTheDarkLogoWhenTheThemeResolvesToDark() {
+  render(
+    <ThemedLogo
+      lightSrc="/images/light.png"
+      darkSrc="/images/dark.png"
+      alt="Vibe Engineers Logo"
+      data-testid="logo"
+    />
+  )
+
+  const image = screen.getByTestId('logo') as HTMLImageElement
+
+  await waitFor(() => {
+    expect(image.getAttribute('src')).toBe('/images/dark.png')
+  })
+}
+
+/**
+ * Verifies the light logo is used when the theme resolves to light.
+ */
+function usesTheLightLogoWhenTheThemeIsLight() {
+  useThemeMock.mockReturnValue({ resolvedTheme: 'light' })
+
+  render(
+    <ThemedLogo
+      lightSrc="/images/light.png"
+      darkSrc="/images/dark.png"
+      alt="Vibe Engineers Logo"
+      data-testid="logo"
+    />
+  )
+
+  const image = screen.getByTestId('logo') as HTMLImageElement
+  expect(image.getAttribute('src')).toBe('/images/light.png')
+}
+
+/**
+ * Ensures the component falls back to an empty source when no logos are supplied.
+ */
+function fallsBackToAnEmptySourceWhenNoLogosAreProvided() {
+  render(<ThemedLogo alt="Vibe Engineers Logo" data-testid="logo" />)
+
+  const image = screen.getByTestId('logo') as HTMLImageElement
+  expect(image.getAttribute('src')).toBe('')
+}
+
 describe('ThemedLogo', () => {
-  beforeEach(() => {
-    useThemeMock.mockReturnValue({ resolvedTheme: 'dark' })
-  })
+  beforeEach(resetThemeMock)
 
-  test('switches to the dark logo when the theme resolves to dark', async () => {
-    render(
-      <ThemedLogo
-        lightSrc="/images/light.png"
-        darkSrc="/images/dark.png"
-        alt="Vibe Engineers Logo"
-        data-testid="logo"
-      />
-    )
+  test(
+    'switches to the dark logo when the theme resolves to dark',
+    switchesToTheDarkLogoWhenTheThemeResolvesToDark
+  )
 
-    const image = screen.getByTestId('logo') as HTMLImageElement
+  test('uses the light logo when the theme is light', usesTheLightLogoWhenTheThemeIsLight)
 
-    await waitFor(() => {
-      expect(image.getAttribute('src')).toBe('/images/dark.png')
-    })
-  })
-
-  test('uses the light logo when the theme is light', () => {
-    useThemeMock.mockReturnValue({ resolvedTheme: 'light' })
-
-    render(
-      <ThemedLogo
-        lightSrc="/images/light.png"
-        darkSrc="/images/dark.png"
-        alt="Vibe Engineers Logo"
-        data-testid="logo"
-      />
-    )
-
-    const image = screen.getByTestId('logo') as HTMLImageElement
-    expect(image.getAttribute('src')).toBe('/images/light.png')
-  })
-
-  test('falls back to an empty source when no logos are provided', () => {
-    render(<ThemedLogo alt="Vibe Engineers Logo" data-testid="logo" />)
-
-    const image = screen.getByTestId('logo') as HTMLImageElement
-    expect(image.getAttribute('src')).toBe('')
-  })
+  test(
+    'falls back to an empty source when no logos are provided',
+    fallsBackToAnEmptySourceWhenNoLogosAreProvided
+  )
 })

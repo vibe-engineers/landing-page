@@ -39,24 +39,29 @@ vi.mock('@/components/team/team-page', () => ({
 
 import TeamPageRoute from '@/app/[locale]/team/page'
 
-describe('Team page route', () => {
-  test('fetches translations and renders the team page', async () => {
-    teamPageProps.length = 0
-    const element = await TeamPageRoute({ params: Promise.resolve({ locale: 'zh' }) })
-    render(element)
+/**
+ * Confirms the team route loads translations and renders the page component.
+ */
+async function fetchesTranslationsAndRendersTheTeamPage() {
+  teamPageProps.length = 0
+  const element = await TeamPageRoute({ params: Promise.resolve({ locale: 'zh' }) })
+  render(element)
 
-    expect(getTranslationsMock).toHaveBeenCalledWith({
-      locale: 'zh',
-      namespace: 'teamPage',
-    })
-
-    expect(screen.getByTestId('header')).toBeInTheDocument()
-    expect(screen.getByTestId('footer')).toBeInTheDocument()
-    expect(screen.getByTestId('team-page')).toBeInTheDocument()
-
-    expect(teamPageProps[0]).toMatchObject({
-      title: 'Meet the Team',
-      subtitle: 'People behind the vibes',
-    })
+  expect(getTranslationsMock).toHaveBeenCalledWith({
+    locale: 'zh',
+    namespace: 'teamPage',
   })
+
+  expect(screen.getByTestId('header')).toBeInTheDocument()
+  expect(screen.getByTestId('footer')).toBeInTheDocument()
+  expect(screen.getByTestId('team-page')).toBeInTheDocument()
+
+  expect(teamPageProps[0]).toMatchObject({
+    title: 'Meet the Team',
+    subtitle: 'People behind the vibes',
+  })
+}
+
+describe('Team page route', () => {
+  test('fetches translations and renders the team page', fetchesTranslationsAndRendersTheTeamPage)
 })
