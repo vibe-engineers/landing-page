@@ -69,7 +69,7 @@ jobs:
     needs: test
     name: Build & Deploy
     if: ${{ inputs.skip_deploy == false }}
-    uses: ./.github/workflows/build-and-deploy.yml
+    uses: ./.github/workflows/build-deploy.yml
     secrets: inherit
     with:
       node-version: ${{ inputs.node-version }}
