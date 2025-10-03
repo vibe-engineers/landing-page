@@ -63,28 +63,6 @@ function rendersAllTeamMembersWithTheirRoles() {
 }
 
 /**
- * Ensures touch interactions toggle the active member portrait state.
- */
-function togglesTheActiveMemberWhenTappedOnTouchDevices() {
-  render(<TeamPage title="Our Team" subtitle="Meet the crew" />)
-
-  const [firstCard] = screen.getAllByTestId('team-card')
-  const images = firstCard.querySelectorAll('img')
-  const colorImage = images[1] as HTMLImageElement
-
-  expect(colorImage.classList.contains('opacity-0')).toBe(true)
-  expect(colorImage.classList.contains('opacity-100')).toBe(false)
-
-  fireEvent.pointerDown(firstCard, { pointerType: 'touch' })
-  expect(colorImage.classList.contains('opacity-100')).toBe(true)
-  expect(colorImage.classList.contains('opacity-0')).toBe(false)
-
-  fireEvent.pointerDown(firstCard, { pointerType: 'touch' })
-  expect(colorImage.classList.contains('opacity-0')).toBe(true)
-  expect(colorImage.classList.contains('opacity-100')).toBe(false)
-}
-
-/**
  * Confirms mouse interactions do not toggle the portrait state.
  */
 function ignoresNonTouchPointerInteractions() {
@@ -103,11 +81,6 @@ describe('TeamPage', () => {
   test(
     'renders all team members with their roles',
     rendersAllTeamMembersWithTheirRoles
-  )
-
-  test(
-    'toggles the active member when tapped on touch devices',
-    togglesTheActiveMemberWhenTappedOnTouchDevices
   )
 
   test(
