@@ -35,3 +35,6 @@ jobs:
     name: CI
     uses: ./.github/workflows/lint-test.yml
     secrets: inherit
+    with:
+      node-version: "22.4.1"
+      skip_deploy: ${{ github.event_name == 'pull_request' }} # skip deployment if it's a pull request
