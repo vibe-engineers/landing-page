@@ -33,5 +33,5 @@ jobs:
   trigger-full-ci:
     # Triggers the full CI/CD pipeline.
     name: CI
-    uses: ./.github/workflows/lint-build-test.yml
+    uses: ./.github/workflows/lint-test.yml
     secrets: inherit
