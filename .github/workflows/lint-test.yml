@@ -1,0 +1,75 @@
+name: Lint & Test
+run-name: Lint & Test
+
+permissions:
+  contents: read
+  actions: read
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: "Node.js version to use"
+        required: true
+        type: string
+      skip_deploy:
+        description: 'Skip the deploy step (true/false)'
+        required: true
+        type: boolean
+
+jobs:
+  lint:
+    name: Run Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        # Checks out the repository code.
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (Latest)
+        # Sets up NodeJS environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Install Dependencies
+        # Installs dependencies
+        run: npm ci
+
+      - name: Run Linter
+        # Runs lint checks
+        run: npm run lint
+
+  test:
+    needs: lint
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        # Checks out the repository code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ inputs.node-version }}
+        # Sets up NodeJS environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Install Dependencies
+        # Installs dependencies
+        run: npm ci
+
+      - name: Run Tests
+        # Runs test cases
+        run: npm run test
+
+  trigger-deploy:
+    needs: test
+    name: Build & Deploy
+    if: ${{ inputs.skip_deploy == false }}
+    uses: ./.github/workflows/build-and-deploy.yml
+    secrets: inherit
+    with:
+      node-version: ${{ inputs.node-version }}

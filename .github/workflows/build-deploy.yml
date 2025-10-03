@@ -1,0 +1,79 @@
+name: Build & Deploy
+run-name: Build & Deploy
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: "Node.js version to use"
+        required: true
+        type: string
+
+jobs:
+  build:
+    name: Run Build Process
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        # Checks out the repository code.
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ inputs.node-version }}
+        # Sets up NodeJS environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Install Dependencies
+        # Install dependencies
+        run: npm ci
+
+      - name: Build Project
+        # Builds project
+        run: npm run build --if-present
+
+      - name: Upload build artifact (dist)
+        # Uploads build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ vars.PROJECT_NAME }}
+          path: dist
+          retention-days: 1
+
+  deploy:
+    needs: build
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        # Checks out the repository code.
+        uses: actions/checkout@v4
+
+      - name: Set up SSH key
+        # Sets up the SSH key for the server.
+        run: |
+          # Create the .ssh directory if it doesn't exist.
+          mkdir -p ~/.ssh
+          # Write the SSH private key to file.
+          echo "${{ secrets.DEPLOYMENT_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          # Add the server to known_hosts to avoid authenticity prompts.
+          ssh-keyscan -H ${{ secrets.DEPLOYMENT_SERVER }} >> ~/.ssh/known_hosts
+
+      - name: Download build artifacts
+        # Downloads dist folder
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ vars.PROJECT_NAME }}
+          path: ${{ vars.PROJECT_NAME }}
+
+      - name: Deploy files to VPS
+        # Clears existing files and deploy new files
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOYMENT_SSH_USER }}@${{ secrets.DEPLOYMENT_SERVER }} \
+            "mkdir -p /var/www/deployments/vibe-engineers/${{ vars.PROJECT_NAME }} && rm -rf /var/www/deployments/vibe-engineers/${{ vars.PROJECT_NAME }}/*"
+
+          scp -o StrictHostKeyChecking=no -r ${{ vars.PROJECT_NAME }}/*  \
+            ${{ secrets.DEPLOYMENT_SSH_USER }}@${{ secrets.DEPLOYMENT_SERVER }}:/var/www/deployments/vibe-engineers/${{ vars.PROJECT_NAME }}/

@@ -1,0 +1,37 @@
+name: CI/CD Status
+run-name: Full CI/CD Pipeline
+
+permissions:
+  contents: read
+  actions: read
+
+on:
+  push:
+    # Triggers on pushes to main/development branches.
+    branches: ["main", "development"]
+    paths-ignore:
+      - "*.md"
+      - ".github/**/*.md"
+      - ".github/FUNDING.yml"
+      - ".gitignore"
+      - ".prettierignore"
+      - ".prettierrc"
+  pull_request:
+    # Triggers on pull requests to main/development branches.
+    branches: ["main", "development"]
+    paths-ignore:
+      - "*.md"
+      - ".github/**/*.md"
+      - ".github/FUNDING.yml"
+      - ".gitignore"
+      - ".prettierignore"
+      - ".prettierrc"
+  workflow_dispatch:
+    # Allows manual triggering of the workflow.
+
+jobs:
+  trigger-full-ci:
+    # Triggers the full CI/CD pipeline.
+    name: CI
+    uses: ./.github/workflows/lint-build-test.yml
+    secrets: inherit
