@@ -5,8 +5,6 @@
 
 <p align="center">
   <a href="https://github.com/vibe-engineers/landing-page/actions/workflows/ci-cd-pipeline.yml"> <img src="https://github.com/vibe-engineers/landing-page/actions/workflows/ci-cd-pipeline.yml/badge.svg" /> </a>
-  <a href="https://github.com/vibe-engineers/landing-page/actions/workflows/lint-test.yml"> <img src="https://github.com/vibe-engineers/landing-page/actions/workflows/lint-test.yml/badge.svg" /> </a>
-  <a href="https://github.com/vibe-engineers/landing-page/actions/workflows/build-deploy.yml"> <img src="https://github.com/vibe-engineers/landing-page/actions/workflows/build-deploy.yml/badge.svg" /> </a>
   <a href="https://github.com/vibe-engineers/landing-page/blob/main/LICENSE"><img src="https://img.shields.io/github/license/vibe-engineers/landing-page.svg" /></a>
 </p>
 
