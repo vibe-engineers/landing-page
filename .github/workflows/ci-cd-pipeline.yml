@@ -16,6 +16,8 @@ on:
       - ".gitignore"
       - ".prettierignore"
       - ".prettierrc"
+      - "**/*.test.ts"
+      - "**/*.test.js"
   pull_request:
     # Triggers on pull requests to main/development branches.
     branches: ["main", "development"]
@@ -26,6 +28,8 @@ on:
       - ".gitignore"
       - ".prettierignore"
       - ".prettierrc"
+      - "**/*.test.ts"
+      - "**/*.test.js"
   workflow_dispatch:
     # Allows manual triggering of the workflow.
 
